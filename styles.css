@@ -13,15 +13,54 @@ body {
   background-color: pink;
   color: var(--earthy-blue);
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr .25fr auto .25fr auto;
+  gap: 10px 0; 
   grid-template-areas: 
   ' . intro intro intro . '
   'searchBtns . modal modal . '
   'burnBtn prev carousel nxt . ';
-  /* width: 100%;
-  height: 100%; */
 }
+
+
+
+#intro {
+  grid-area: intro;
+  background-color: rgb(168, 195, 172);
+  justify-content: center;
+  text-align: center;
+  border: 3px solid var(--earthy-green);
+  border-radius: 50px;
+  padding: 10px;
+}
+#intro > h1 {
+  text-decoration: underline;
+}
+#intro > h1:hover {
+  color: var(--earthy-green);
+}
+
+#idliketoBTNS {
+  grid-area: searchBtns;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#byName {
+  background-color: palevioletred;
+  border: 3px solid var(--earthy-green);
+  border-radius: 50px;
+  color: white;
+  box-shadow: 10px 5px 10px rgb(234, 2, 80);
+  padding: 10px;
+}
+#byIngredient {
+  background-color: palevioletred;
+  border: 3px solid var(--earthy-green);
+  border-radius: 50px;
+  color: white;
+  box-shadow: 10px 5px 10px rgb(234, 2, 80);
+  padding: 10px;
+}
+
 #inputkw {
   display: none;
 }
@@ -30,12 +69,6 @@ body {
 }
 
 
-#intro {
-  grid-area: intro;
-}
-#idliketoBTNS{
-  grid-area: searchBtns;
-}
 #modal {
   grid-area: modal;
   /* background-color: white; */
@@ -44,20 +77,21 @@ body {
   z-index: 1;
 }
 .modal-textbox {
-  background-color: peachpuff;
+  grid-area: modal;
+  background-color: rgb(245, 245, 167);
   border-radius: 20px;
   border: 5px solid darkolivegreen;
   height: 375px;
-  width: 300px;
+  width: 400px;
+  font-size: 23px;
   padding: 10px;
   text-align: center;
   justify-content: center;
-  color: rgb(153, 172, 53);
-  font-size: 23px;
-  box-shadow: 30px 5px 5px palevioletred;
-  /* position: fixed; */
-  /* top: 10%;
-  left: 10%; */
+  color: var(--dark-earthy-teal-blue);
+  box-shadow: 20px 5px 10px palevioletred;
+  /* position: fixed;
+  top: 20%;
+  left: 25%; */
 }
 .modal-textbox:hover {
   box-shadow: 30px 5px 5px darkolivegreen; 
@@ -71,10 +105,10 @@ body {
 
 
 #bfast, #lunch, #dinner, #dessert {
-  background-color: lightgreen;
-  box-shadow: 10px 5px 5px rgb(96, 0, 48);
+  background-color: rgb(156, 189, 211);
+  box-shadow: 10px 5px 5px rgb(207, 144, 176);
   border-radius: 10px;
-  border: 1px solid lightgreen;
+  border: 1px solid rgb(14, 21, 14);
   height: 35px;
   width: auto;
   font-size: 25px;
@@ -97,11 +131,11 @@ body {
 
 .carousel-container { 
   grid-area: carousel; 
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 95%;
-  height: 95%;
+  /* width: 95%;
+  height: 95%; */
 }
 .images {
   /* width: 95%;
@@ -132,15 +166,14 @@ body {
   border-radius: 50px;
   box-shadow: 3px 3px 3px white;
   z-index: 1;
-  /* height: auto;
+  height: auto;
   width: 30px;
-  align-self: center; */
+  align-self: center;
  
 }
 .prev {
   grid-area: prev; 
   justify-self: end;
-
 }
 
 .nxt {
@@ -163,19 +196,20 @@ body {
 
 #burnEnergy {
   grid-area: burnBtn;
+  
 }
 
-@media only screen and (min-width: 600px) { 
-  body {
+ @media only screen and (min-width: 600px) { 
+  /* body {
       grid-template-rows: auto 225px 80px auto 50px;
-  }
+  } */
   .modal-textbox {
       height: 375px;
       width: 400px;
       font-size: 23px;
-      position: relative;
+      /* position: fixed;
       top: 20%;
-      left: 20%;
+      left: 20%; */
   }
 }
 @media only screen and (min-width: 930px){
@@ -184,12 +218,12 @@ body {
       width: 550px;
       margin: 150px auto;
       padding: 10px;
-      position: fixed;
+      /* position: fixed;
       top: 10%;
-      left: 30%;
+      left: 30%; */
   }
   .modal-textbox > h1 {
       font-size: 85px;
       margin-bottom: -10px;
   }
-}
+} 
