@@ -9,13 +9,39 @@
   <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 </head>
 <body>
+
   <div id='intro'> 
     <h1> Welcome to <span class='bold'>What are we cooking?</span></h1>
     <h2> Can't figure out what to make or choose a recipe? This site will help you make the perfect decision. Just answer the questions below to get started or click on the boxes to seach by recipe name or by ingredient. 
     </h2>
   </div>
-  <button id="byName">I'd Like to Search by Name:</button>
-  <button id="byIngredient">I'd Like to Search by Ingredient:</button>
+
+  <div id='idliketoBTNS'>
+    <button id="byName">I'd Like to Search by Key Word:</button>
+    <div id="inputkw">
+      <form id="kwForm">
+        <input id="inputKW" type="text" placeholder="Key Word" />
+        <input type="submit" value="Get recipes" />
+      </form>
+      <h1>Recipes</h1>
+      <p id="one"></p>
+        <dl id="recipeResults1">
+          <dt>Results</dt>
+          <dd id="results1"></dd>
+        </dl>
+    </div>
+    
+    <button id="byIngredient">I'd Like to Search by Ingredient:</button>
+    <div id="inputI">
+      <form id="iForm">
+        <input id="inputIng" type="text" placeholder="Ingredient" />
+        <input type="submit" value="Get Recipes" />
+      </form>
+      <h1> Recipes</h1>
+        <p id="recipeResults2"></p>
+    </div>
+  </div>
+  
   <div class="modal-container" id="modal">
     <div class="modal-textbox">
       <h1>What meal would you like to cook?</h1>
@@ -25,6 +51,7 @@
         <button class="meal" id="dinner">Dinner</button>
         <button class="meal" id="dessert">Dessert</button>
       </div>
+    </div>
   </div>
 
   <div class="carousel-container">
@@ -42,6 +69,8 @@
       <!-- from linearicons icon font -->
     </div>
   </div>
+
   <button id="burnEnergy">How to burn that energy?</button>
+  
 </body>
 </html>

@@ -10,19 +10,94 @@
   box-sizing: border-box;
 }
 body {
-  background-color: var(--dark-earthy-teal-blue);
+  background-color: pink;
   color: var(--earthy-blue);
   display: grid;
-  /* grid-template-columns: ;
-  grid-template-rows: ;
-  grid-template-areas: ; */
-  width: 100%;
-  height: 100%;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr .25fr auto .25fr auto;
+  grid-template-areas: 
+  ' . intro intro intro . '
+  'searchBtns . modal modal . '
+  'burnBtn prev carousel nxt . ';
+  /* width: 100%;
+  height: 100%; */
 }
+#inputkw {
+  display: none;
+}
+#inputI {
+  display: none;
+}
+
+
+#intro {
+  grid-area: intro;
+}
+#idliketoBTNS{
+  grid-area: searchBtns;
+}
+#modal {
+  grid-area: modal;
+  /* background-color: white; */
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.modal-textbox {
+  background-color: peachpuff;
+  border-radius: 20px;
+  border: 5px solid darkolivegreen;
+  height: 375px;
+  width: 300px;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  color: rgb(153, 172, 53);
+  font-size: 23px;
+  box-shadow: 30px 5px 5px palevioletred;
+  /* position: fixed; */
+  /* top: 10%;
+  left: 10%; */
+}
+.modal-textbox:hover {
+  box-shadow: 30px 5px 5px darkolivegreen; 
+} 
+.modal-textbox > h1 {
+  /* font-family: "azote", serif; */
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: -10px;
+}
+
+
+#bfast, #lunch, #dinner, #dessert {
+  background-color: lightgreen;
+  box-shadow: 10px 5px 5px rgb(96, 0, 48);
+  border-radius: 10px;
+  border: 1px solid lightgreen;
+  height: 35px;
+  width: auto;
+  font-size: 25px;
+  margin-top: 15px;
+  /* font-family: azote, serif; */
+  font-weight: 300;
+  font-style: normal;
+}
+#bfast:hover, #lunch:hover, #dinner:hover, #dessert:hover {
+  background-color: rgb(233, 139, 84);
+  box-shadow: 10px 5px 5px darkolivegreen;
+  cursor: pointer;
+}
+
+
+
+
+
+
 
 .carousel-container { 
   grid-area: carousel; 
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   width: 95%;
@@ -53,14 +128,14 @@ body {
   background-color: var(--seafoam-green);
   color: var(--dark-earthy-teal-blue);
   font-size: 20px;
-  padding: 10px;
+  /* padding: 10px; */
   border-radius: 50px;
   box-shadow: 3px 3px 3px white;
   z-index: 1;
-  height: auto;
+  /* height: auto;
   width: 30px;
-  align-self: center;
-  z-index: 1;
+  align-self: center; */
+ 
 }
 .prev {
   grid-area: prev; 
@@ -84,4 +159,37 @@ body {
   background: var(--earthy-green);
   box-shadow: 3px 3px 3px 3px peachpuff;
   color: white;
+}
+
+#burnEnergy {
+  grid-area: burnBtn;
+}
+
+@media only screen and (min-width: 600px) { 
+  body {
+      grid-template-rows: auto 225px 80px auto 50px;
+  }
+  .modal-textbox {
+      height: 375px;
+      width: 400px;
+      font-size: 23px;
+      position: relative;
+      top: 20%;
+      left: 20%;
+  }
+}
+@media only screen and (min-width: 930px){
+  .modal-textbox {
+      height: 375px;
+      width: 550px;
+      margin: 150px auto;
+      padding: 10px;
+      position: fixed;
+      top: 10%;
+      left: 30%;
+  }
+  .modal-textbox > h1 {
+      font-size: 85px;
+      margin-bottom: -10px;
+  }
 }
