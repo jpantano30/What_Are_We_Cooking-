@@ -23,10 +23,11 @@ searchByKeyWordBtn.addEventListener('click', () => {
   modal.style.display = 'none'
   searchByIngredientBtn.style.display = 'none'
   searchByKeyWordBtn.style.display = 'none'
-  keyWordDiv.style.display = 'block'
+  keyWordDiv.style.display = 'flex'
+  keyWordDiv.style.flexDirection = 'column'
   burnBtn.style.display = 'none'
-
 })
+
  document.getElementById('kwForm').addEventListener('submit', (e) => {
     e.preventDefault()
     const valueKW = inputKeyWord.value
@@ -145,7 +146,7 @@ dessertBtn.addEventListener('click', () => {
   })
 
 
-  
+
 
 
 
