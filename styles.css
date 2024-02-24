@@ -85,10 +85,12 @@ dt {
 
 #inputkw {
   display: none;
+  grid-area: modal;
 
 }
 #inputI {
   display: none;
+  grid-area: modal;
 }
 
 input[type="submit"] {
@@ -119,6 +121,13 @@ input[type='text'] {
   width: 60px;
   align-self: center;
 }
+#back3 {
+  align-self: start;
+  justify-self: center;
+  display: none;
+  grid-area: modal;
+  z-index: 1;
+}
 
 #modal {
   grid-area: modal;
@@ -147,6 +156,10 @@ input[type='text'] {
   top: 20%;
   left: 25%; */
 }
+#modal-2 {
+  display: none;
+}
+
 .modal-textbox:hover {
   box-shadow: 30px 5px 5px darkolivegreen; 
 } 
@@ -182,6 +195,10 @@ input[type='text'] {
   font-weight: 300;
   align-content: center;
 }
+*********
+.recipe-title > a {
+  text-decoration: none;
+}
 
 /* #bfast, #lunch, #dinner, #dessert {
   background-color: rgb(156, 189, 211);
@@ -202,9 +219,13 @@ input[type='text'] {
 }
 
 
+#resultsFromModalInput {
+  grid-area: modal;
+  display: none;
+  text-align: center;
+}
 
-
-
+/* I need to move back button 3 to the center and get it to show up when i click back and choose a new option */
 
 
 .carousel-container { 
@@ -244,9 +265,10 @@ input[type='text'] {
   border-radius: 50px;
   box-shadow: 3px 3px 3px white;
   z-index: 1;
-  height: auto;
+  height: 40px;
   width: 40px;
   align-self: center;
+  text-align: center;
 }
 .prev {
   grid-area: prev; 
