@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputIngredient = document.getElementById('inputIng')
   const keyWordDiv = document.getElementById('inputkw')
   const ingredDiv = document.getElementById('inputI')
-  const ingredientForm = document.getElementById('iForm')
   const burnBtn = document.getElementById('burnEnergy')
   const resultsContainer = document.querySelector('#results1')
   const resultsContainer2 = document.querySelector('#results2')
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   let mealType = ''
-  let dessertBtnPressed = false
+  // let dishType = ''
 
   //carousel 
   const next = document.querySelector('.nxt')
@@ -42,74 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentImgIndex = 0
   let previousImgIndex = 0
 
-
-
-  let diet = ''
-
-  
-  const dairyFBtn = document.getElementById('dairy-free')
-  const glutenFBtn = document.getElementById('gluten-free')
-  const ketoBtn = document.getElementById('keto')
-  const kosherBtn = document.getElementById('kosher')
-  const veganBtn = document.getElementById('vegan')
-  const vegBtn = document.getElementById('veg')
-  const lowSugBtn = document.getElementById('low-sugar')
-  const noneBtn = document.getElementById('none')
-
-  
-
-  const resultsModalInput = document.getElementById('resultsFromModalInput')
-
-  const fetchForHealth = `${endPoint}?type=public&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&health=${diet}&random=true`
-  const dessertFetchForH = `${endPoint}?type=public&app_id=${app_id}&app_key=${app_key}&dishType=Desserts&health=${diet}&random=true`
-
-
-  const fetchFunctionHealth = (fetchFor) => {
-    fetch(fetchFor)
-    .then((data) => {
-      console.log(data)
-      return data.json()
-    },
-    (err) => {
-      console.log("Error: ", err)
-    }
-    ).then(
-      (json) => {
-        console.log("JSON DATA: ", json)
-    
-
-        if(json.hits && json.hits.length > 0){
-          json.hits.forEach((hit) => {
-            const recipeTitle = hit.recipe.label
-            const recipeURL = hit.recipe.url
-            const recipeImg = hit.recipe.image 
-            console.log(recipeTitle, recipeURL, recipeImg)
-            modal.style.display = 'none'
-            searchByBtns.style.display = 'none'
-            burnBtn.style.display = 'none'
-            backBtn3.style.display = 'flex'
-            const resultItem = document.createElement('div')
-            resultItem.classList.add('recipe-result')
-            resultItem.innerHTML = `
-            <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
-            <p class="recipe-title"><a href="${recipeURL}" target="_blank">Click here to get this recipe: 
-            ${recipeTitle}</a></p>`
-            resultsModalInput.appendChild(resultItem)
-            resultsModalInput.style.display = 'block'
-          })
-        } else {
-          console.log(resultsModalInput)
-          resultsModalInput.style.display = 'none'
-          const errorMessage = document.createElement('h1')
-
-          errorMessage.innerText = "Key Word Not Found"
-          document.querySelector('#two').append(errorMessage)
-        }
-      })
-      .catch((err) => {
-        console.log('Error: ', err)
-      })
-  }
 
 
 
@@ -125,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsContainer.innerText = ''
     // document.querySelector('#one').innerText = ''
   })
-  const KeyWordForm = document.getElementById('kwForm')
-  KeyWordForm.addEventListener('submit', (e) => {
+
+  document.getElementById('kwForm').addEventListener('submit', (e) => {
       e.preventDefault()
       const valueKW = inputKeyWord.value
 
@@ -185,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsContainer2.innerText = '';
     document.querySelector('#two').innerText = '';
   })
-
+const ingredientForm = document.getElementById('iForm')
   ingredientForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const valueIngred = inputIngredient.value
@@ -312,20 +243,91 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   lunchBtn.addEventListener('click', () => {
     mealType = 'Lunch'
+    // fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&random=true`)
     q2()
 
     })
   dinnerBtn.addEventListener('click', () => {
-
+    // fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&random=true`)
     mealType = 'dinner'
     q2()
-  })
-  dessertBtn.addEventListener('click', () => {
-    dessertBtnPressed = true
-    dishType = 'dessert'
-    q2()
-  })
 
+  })
+  // dessertBtn.addEventListener('click', () => {
+  //   dishType = 'Desserts'
+  //   // fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&dishType=${dishType}&random=true`)
+
+  //   q2()
+  //   // https://api.edamam.com/api/recipes/v2?type=public&app_id=f674e30b&app_key=6560b677fd0aed4b118c0e7d7d2d3240&dishType=Desserts&random=true
+
+
+  // })
+
+
+  let diet = ''
+
+  
+    const dairyFBtn = document.getElementById('dairy-free')
+    const glutenFBtn = document.getElementById('gluten-free')
+    const ketoBtn = document.getElementById('keto')
+    const kosherBtn = document.getElementById('kosher')
+    const veganBtn = document.getElementById('vegan')
+    const vegBtn = document.getElementById('veg')
+    const lowSugBtn = document.getElementById('low-sugar')
+    const noneBtn = document.getElementById('none')
+  
+
+    const resultsModalInput = document.getElementById('resultsFromModalInput')
+
+
+
+    const fetchFunction = () => {
+      fetch(`${endPoint}?type=public&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&health=${diet}&random=true`)
+      .then((data) => {
+        console.log(data)
+        return data.json()
+      },
+      (err) => {
+        console.log("Error: ", err)
+      }
+      ).then(
+        (json) => {
+          console.log("JSON DATA: ", json)
+      
+  
+          if(json.hits && json.hits.length > 0){
+            json.hits.forEach((hit) => {
+              const recipeTitle = hit.recipe.label
+              const recipeURL = hit.recipe.url
+              const recipeImg = hit.recipe.image 
+              console.log(recipeTitle, recipeURL, recipeImg)
+              modal.style.display = 'none'
+              searchByBtns.style.display = 'none'
+              burnBtn.style.display = 'none'
+              backBtn3.style.display = 'flex'
+              const resultItem = document.createElement('div')
+              resultItem.classList.add('recipe-result')
+              resultItem.innerHTML = `
+              <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
+              <p class="recipe-title"><a href="${recipeURL}" target="_blank">Click here to get this recipe: 
+              ${recipeTitle}</a></p>`
+              resultsModalInput.appendChild(resultItem)
+              resultsModalInput.style.display = 'block'
+            })
+          } else {
+            console.log(resultsModalInput)
+            resultsModalInput.style.display = 'none'
+            const errorMessage = document.createElement('h1')
+  
+            errorMessage.innerText = "Key Word Not Found"
+            document.querySelector('#two').append(errorMessage)
+  
+          }
+        })
+        .catch((err) => {
+          console.log('Error: ', err)
+        })
+    }
 
 
     dairyFBtn.addEventListener('click', () => {
@@ -334,70 +336,107 @@ document.addEventListener('DOMContentLoaded', () => {
     // console.log(backBtn3.style.display)
 
     diet = 'dairy-free'
-    if(dessertBtnPressed){
-      fetchFunctionHealth(dessertFetchForH)
-    } else { 
-    fetchFunctionHealth(fetchForHealth)
-    }
-  })
+    fetchFunction()
+    // fetch(`${endPoint}?type=public&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&health=${diet}&random=true`)
+    // .then((data) => {
+    //   console.log(data)
+    //   return data.json()
+    // },
+    // (err) => {
+    //   console.log("Error: ", err)
+    // }
+    // ).then(
+    //   (json) => {
+    //     console.log("JSON DATA: ", json)
+    
+
+    //     if(json.hits && json.hits.length > 0){
+    //       json.hits.forEach((hit) => {
+    //         const recipeTitle = hit.recipe.label
+    //         const recipeURL = hit.recipe.url
+    //         const recipeImg = hit.recipe.image 
+    //         console.log(recipeTitle, recipeURL, recipeImg)
+    //         modal.style.display = 'none'
+    //         searchByBtns.style.display = 'none'
+    //         burnBtn.style.display = 'none'
+    //         backBtn3.style.display = 'flex'
+    //         const resultItem = document.createElement('div')
+    //         resultItem.classList.add('recipe-result')
+    //         resultItem.innerHTML = `
+    //         <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
+    //         <p class="recipe-title"><a href="${recipeURL}" target="_blank">Click here to get this recipe: 
+    //         ${recipeTitle}</a></p>`
+    //         resultsModalInput.appendChild(resultItem)
+    //         resultsModalInput.style.display = 'block'
+    //       })
+    //     } else {
+    //       console.log(resultsModalInput)
+    //       resultsModalInput.style.display = 'none'
+    //       const errorMessage = document.createElement('h1')
+
+    //       errorMessage.innerText = "Key Word Not Found"
+    //       document.querySelector('#two').append(errorMessage)
+
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     console.log('Error: ', err)
+    //   })
+
+
+
+
+    
+    })
  
 
 
 
   glutenFBtn.addEventListener('click', () => {
     diet = 'gluten-free'
-    if(dessertBtnPressed){
-        fetchFunctionHealth(dessertFetchForH)
-      } else { 
-        fetchFunctionHealth(fetchForHealth)
-      }
+    fetchFunction()
+    // fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&dishType=${dishType}&health=${diet}&random=true`)
   })
   ketoBtn.addEventListener('click', () => {
     diet = 'keto-friendly'
-    if(dessertBtnPressed){
-      fetchFunctionHealth(dessertFetchForH)
-    } else { 
-    fetchFunctionHealth(fetchForHealth)
-    }
+    fetchFunction()
+    // fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&dishType=${dishType}&health=${diet}&random=true`)
   })
   kosherBtn.addEventListener('click', () => {
     diet = 'kosher'
-    if(dessertBtnPressed){
-      fetchFunctionHealth(dessertFetchForH)
-    } else { 
-    fetchFunctionHealth(fetchForHealth)
-    }
+    fetchFunction()
+    // fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&dishType=${dishType}&health=${diet}&random=true`)
   })
   veganBtn.addEventListener('click', () => {
     diet = 'vegan'
-    if(dessertBtnPressed){
-      fetchFunctionHealth(dessertFetchForH)
-    } else { 
-    fetchFunctionHealth(fetchForHealth)
-    }
+    fetchFunction()
+    // fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&dishType=${dishType}&health=${diet}&random=true`)
   })
   vegBtn.addEventListener('click', () => {
     diet = 'vegetarian'
-    if(dessertBtnPressed){
-      fetchFunctionHealth(dessertFetchForH)
-    } else { 
-    fetchFunctionHealth(fetchForHealth)
-    }
+    fetchFunction()
+    // fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&dishType=${dishType}&health=${diet}&random=true`)
   })
   lowSugBtn.addEventListener('click', () => {
     diet = 'low-sugar'
-    if(dessertBtnPressed){
-      fetchFunctionHealth(dessertFetchForH)
-    } else { 
-    fetchFunctionHealth(fetchForHealth)
-    }
+    fetchFunction()
+    // fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&dishType=${dishType}&health=${diet}&random=true`)
+    
+  })
+  noneBtn.addEventListener('click', () => {
+    diet = ''
+    fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&random=true`
+    
+    
   })
 
-  noneBtn.addEventListener('click', () => {
-    if(dessertBtnPressed){
-      fetchFunctionHealth('https://api.edamam.com/api/recipes/v2?type=public&app_id=f674e30b&app_key=6560b677fd0aed4b118c0e7d7d2d3240&dishType=Desserts&random=true')
-    } else {
-      fetchFunctionHealth(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&random=true`)
-    }
-  })
+
+
+  // // modal.style.display = 'none'
+
+
+
+
+
 })
+
