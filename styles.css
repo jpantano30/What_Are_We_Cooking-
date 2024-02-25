@@ -16,13 +16,27 @@ body {
   display: grid;
   gap: 10px 0; 
   grid-template-areas: 
-  ' . intro intro intro . '
-  'searchBtns . modal modal . '
+  ' . intro intro intro .  '
+  'searchBtns dessert modal modal . '
   'burnBtn prev carousel nxt . ';
   font-family: fantasy; 
 }
 
+#desserts {
+  grid-area: dessert;
+  align-content: start;
+  align-self: center;
+  background-color: palevioletred;
+  border: 3px solid var(--earthy-green);
+  border-radius: 50px;
+  color: white;
+  box-shadow: 10px 5px 10px rgb(234, 2, 80);
+  padding: 10px;
+}
 
+#desserts:hover {
+  box-shadow: 10px 5px 10px rgb(13, 13, 207);
+}
 
 #intro {
   grid-area: intro;
@@ -77,6 +91,7 @@ body {
 #byIngredient:hover {
   box-shadow: 10px 5px 10px rgb(13, 13, 207);
 }
+
 dt {
   color: navy;
   text-decoration: underline;
@@ -89,6 +104,10 @@ dt {
 
 }
 #inputI {
+  display: none;
+  grid-area: modal;
+}
+#dessertResults {
   display: none;
   grid-area: modal;
 }

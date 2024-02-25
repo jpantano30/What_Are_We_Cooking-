@@ -10,6 +10,7 @@
 </head>
 <body>
 
+
   <div id='intro'> 
     <h1> Welcome to <span class='bold'>What are we cooking?</span></h1>
     <h3> Can't figure out what to make or choose a recipe? This site will help you make the perfect decision. Just answer the questions below to get started or click on the boxes to seach by recipe name or by ingredient. 
@@ -46,7 +47,20 @@
       </dl>
     <button class="back" id="back2">Back</button>
     </div>
+
+    <button id="desserts">What's For Dessert!?!</button>
+    <div id="dessertResults">
+      <h1> Recipes:</h1>
+      <p id="three"></p>
+      <dl id="recipeResults3">
+        <dt>Results:</dt>
+        <dd id="results3"></dd>
+      </dl>
+      <button class="back" id="back5">Back</button>
+    </div>
+    
   </div>
+
   
   <div class="modal-container" id="modal">
     <div class="modal-textbox" id="modal-1">
@@ -55,7 +69,6 @@
         <button class="meal" id="bfast">Breakfast</button>
         <button class="meal" id="lunch">Lunch</button>
         <button class="meal" id="dinner">Dinner</button>
-        <button class="meal" id="dessert">Dessert</button>
       </div>
     </div>
     <div class="modal-textbox" id="modal-2">
@@ -78,7 +91,6 @@
    <button class="back" id="back3">Back</button>
   </div> 
   <div id="results"></div>
- 
 
   <div class="carousel-container">
     <div class="carousel-images">
