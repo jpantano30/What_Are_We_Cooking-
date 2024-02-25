@@ -67,10 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let previousImgIndex = 0
 
 
-
-
-
-  searchByKeyWordBtn.addEventListener('click', () => {
+  const handleKeyWordSearch = () => {
     modal.style.display = 'none'
     searchByIngredientBtn.style.display = 'none'
     searchByKeyWordBtn.style.display = 'none'
@@ -82,7 +79,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     resultsContainer.innerText = ''
     document.querySelector('#one').innerText = ''
-  })
+  }
+  const handleIngredientSearch = () => {
+    modal.style.display = 'none'
+    searchByIngredientBtn.style.display = 'none'
+    searchByKeyWordBtn.style.display = 'none'
+    dessertBtn.style.display = 'none'
+    ingredDiv.style.display = 'flex'
+    ingredDiv.style.flexDirection = 'column'
+    ingredDiv.style.gridArea = 'modal'
+    burnBtn.style.display = 'none'
+    resultsContainer2.innerText = ''
+    document.querySelector('#two').innerText = ''
+  }
+  searchByKeyWordBtn.addEventListener('click', handleKeyWordSearch)
+  searchByIngredientBtn.addEventListener('click', handleIngredientSearch)
 
   keyWordForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -131,19 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
 
-
-  searchByIngredientBtn.addEventListener('click', () => {
-    modal.style.display = 'none'
-    searchByIngredientBtn.style.display = 'none'
-    searchByKeyWordBtn.style.display = 'none'
-    dessertBtn.style.display = 'none'
-    ingredDiv.style.display = 'flex'
-    ingredDiv.style.flexDirection = 'column'
-    ingredDiv.style.gridArea = 'modal'
-    burnBtn.style.display = 'none'
-    resultsContainer2.innerText = ''
-    document.querySelector('#two').innerText = ''
-  })
   ingredientForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const valueIngred = inputIngredient.value
@@ -251,11 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
   })
 
-
-
-
-
-
   const back = () => {
     modal.style.display = 'flex'
     searchByBtns.style.display = 'flex'
@@ -347,95 +340,73 @@ document.addEventListener('DOMContentLoaded', () => {
     q2()
 
   })
-    const fetchFunction = () => {
-      fetch(`${endPoint}?type=public&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&health=${diet}&random=true`)
-      .then((data) => {
-        console.log(data)
-        return data.json()
-      },
-      (err) => {
-        console.log("Error: ", err)
-      }
-      ).then(
-        (json) => {
-          console.log("JSON DATA: ", json)
-      
-  
-          if(json.hits && json.hits.length > 0){
-            json.hits.forEach((hit) => {
-              const recipeTitle = hit.recipe.label
-              const recipeURL = hit.recipe.url
-              const recipeImg = hit.recipe.image 
+  const fetchFunction = () => {
+    fetch(`${endPoint}?type=public&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&health=${diet}&random=true`)
+    .then((data) => {
+      console.log(data)
+      return data.json()
+    },
+    (err) => {
+      console.log("Error: ", err)
+    }
+    ).then(
+      (json) => {
+        console.log("JSON DATA: ", json)
+    
 
-              console.log(recipeTitle, recipeURL, recipeImg)
+        if(json.hits && json.hits.length > 0){
+          json.hits.forEach((hit) => {
+            const recipeTitle = hit.recipe.label
+            const recipeURL = hit.recipe.url
+            const recipeImg = hit.recipe.image 
 
-              modal.style.display = 'none'
-              searchByBtns.style.display = 'none'
-              burnBtn.style.display = 'none'
-              backBtn3.style.display = 'flex'
-              resultsModalInput.style.display = 'block'
+            console.log(recipeTitle, recipeURL, recipeImg)
+
+            modal.style.display = 'none'
+            searchByBtns.style.display = 'none'
+            burnBtn.style.display = 'none'
+            backBtn3.style.display = 'flex'
+            resultsModalInput.style.display = 'block'
 
 
-              const resultItem = document.createElement('div')
-              resultItem.classList.add('recipe-result')
-              resultItem.innerHTML = `
-              <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
-              <p class="recipe-title"><a href="${recipeURL}" target="_blank">Click here to get this recipe: 
-              ${recipeTitle}</a></p>`
-              resultsModalInput.appendChild(resultItem)
+            const resultItem = document.createElement('div')
+            resultItem.classList.add('recipe-result')
+            resultItem.innerHTML = `
+            <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
+            <p class="recipe-title"><a href="${recipeURL}" target="_blank">Click here to get this recipe: 
+            ${recipeTitle}</a></p>`
+            resultsModalInput.appendChild(resultItem)
 
-            })
-          } else {
-            console.log(resultsModalInput)
-            resultsModalInput.style.display = 'none'
-            const errorMessage = document.createElement('h1')
-            errorMessage.innerText = "No Recipes Found"
-            document.querySelector('#results').append(errorMessage)
-          }
-        })
-        .catch((err) => {
-          console.log('Error: ', err)
+          })
+        } else {
+          console.log(resultsModalInput)
           resultsModalInput.style.display = 'none'
           const errorMessage = document.createElement('h1')
-          errorMessage.innerText = "An error occurred while fetching recipes"
+          errorMessage.innerText = "No Recipes Found"
           document.querySelector('#results').append(errorMessage)
-        })
-    }
+        }
+      })
+      .catch((err) => {
+        console.log('Error: ', err)
+        resultsModalInput.style.display = 'none'
+        const errorMessage = document.createElement('h1')
+        errorMessage.innerText = "An error occurred while fetching recipes"
+        document.querySelector('#results').append(errorMessage)
+      })
+  }
 
+  const handleDietButtonClick = (dietType) => {
+    diet = dietType
+    fetchFunction()
+  }
 
-    dairyFBtn.addEventListener('click', () => {
-    // console.log('Dairy Free Button Clicked')
-      diet = 'dairy-free'
-      fetchFunction()
-    })
- 
-
-
-
-  glutenFBtn.addEventListener('click', () => {
-    diet = 'gluten-free'
-    fetchFunction()
-  })
-  ketoBtn.addEventListener('click', () => {
-    diet = 'keto-friendly'
-    fetchFunction()
-  })
-  kosherBtn.addEventListener('click', () => {
-    diet = 'kosher'
-    fetchFunction()
-  })
-  veganBtn.addEventListener('click', () => {
-    diet = 'vegan'
-    fetchFunction()
-  })
-  vegBtn.addEventListener('click', () => {
-    diet = 'vegetarian'
-    fetchFunction()
-  })
-  lowSugBtn.addEventListener('click', () => {
-    diet = 'low-sugar'
-    fetchFunction()
-  })
+  dairyFBtn.addEventListener('click', () => handleDietButtonClick('dairy-free'))
+  glutenFBtn.addEventListener('click', () => handleDietButtonClick('gluten-free'))
+  ketoBtn.addEventListener('click', () => handleDietButtonClick('keto-friendly'))
+  kosherBtn.addEventListener('click', () => handleDietButtonClick('kosher'))
+  veganBtn.addEventListener('click', () => handleDietButtonClick('vegan'))
+  vegBtn.addEventListener('click', () => handleDietButtonClick('vegetarian'))
+  lowSugBtn.addEventListener('click', () => handleDietButtonClick('low-sugar'))
   noneBtn.addEventListener('click', () => {
     diet = ''
     fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&random=true`)
