@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
           //clear last results 
           resultsContainer.innerText = ''
           // clearing error message is not working 
-          errorMessage.innerText = ''
+          // errorMessage.innerText = ''
 
           json.hits.forEach((hit) => {
             const recipeTitle = hit.recipe.label
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(json.hits && json.hits.length > 0){
           //clear last results 
           resultsContainer2.innerText = ''
-          errorMessage.innerText = ''
+          // errorMessage.innerText = ''
 
           json.hits.forEach((hit) => {
             //cant get results to show up in the modal grid area 
