@@ -219,24 +219,16 @@ input[type='text'] {
   text-decoration: none;
 }
 
-/* #bfast, #lunch, #dinner, #dessert {
-  background-color: rgb(156, 189, 211);
-  box-shadow: 10px 5px 5px rgb(207, 144, 176);
-  border-radius: 10px;
-  border: 1px solid rgb(14, 21, 14);
-  height: 35px;
-  width: auto;
-  font-size: 25px;
-  margin-top: 15px;
-  font-weight: 300;
-  align-content: center;
-} */
 .meal:hover {
-  background-color: rgb(243, 182, 146);
+  background-color: pink;
   box-shadow: 10px 5px 5px darkolivegreen;
   cursor: pointer;
 }
-
+.diet:hover{
+  background-color: pink;
+  box-shadow: 10px 5px 5px darkolivegreen;
+  cursor: pointer;
+}
 
 #resultsFromModalInput {
   grid-area: modal;
