@@ -37,7 +37,6 @@ This site allows users to search for recipes by key words or ingredients and inc
 <details>
  <summary> 🎨 Wire Frame </summary>
    <details> 
-    <summary> ✏️ </summary>
      <img src="/Other Files/WhatAreWeCookingWireframe.png">
    </details>
 </details>
@@ -79,6 +78,9 @@ This site allows users to search for recipes by key words or ingredients and inc
 #
 
 ## Approach Taken:
+👉 I started by add in HTML and some CSS. Then created the carousel. 
+👉 I then went back and forth through HTML, CSS, and JavaScript creating buttons and functionality. 
+👉 Lastly, I finished off by adjusting CSS styling for responsive design. 
 
 
 ## Technologies used: 👩‍💻
