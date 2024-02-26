@@ -59,10 +59,11 @@ This site allows users to search for recipes by key words or ingredients and inc
  <summary> 🎨 Wire Frames </summary>
    <details> 
     <summary> ✏️ What Are We Cooking? page</summary>
-     <img src="/Other Files/WhatAreWeCookingWireframe.png">
+        <img src="/Other Files/WhatAreWeCookingWireframe.png">
    </details>
-       <summary> ✏️ How to Burn that Energy? Page</summary>
-     <img src="/Other Files/Screenshot 2024-02-20 at 2.12.22 PM.png">
+   <details>
+      <summary> ✏️ How to Burn that Energy? Page</summary>
+          <img src="/Other Files/Screenshot 2024-02-20 at 2.12.22 PM.png">
    </details>
 </details>
 
