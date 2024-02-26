@@ -1,4 +1,19 @@
 # What_Are_We_Cooking-
+#### Technologies used: 👩‍💻
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![VSCode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+<!-- ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) -->
+![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
+![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
+![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+
+#
+
 <div align="center">
 <a href="#"><img src="#" height="400"></a>
 </div>
@@ -9,10 +24,16 @@ Click the image above to be directed to What Are We Cooking!. :point_up_2:
 
 #
 
+
 # Description: 
 "What Are We Cooking?" Is a webpage that uses JavaScript fetch to get recipes from the Edamam Recipe Search API. 
  
 This site allows users to search for recipes by key words or ingredients and includes two multiple choice answer questions for finding recipes by meal type and if any dietary rectrictions are present. An additional button is included that generates random dessert recipes. 
+#
+
+### Deployed Link 🔗
+<a href="#"> What Are We Cooking?</a> 
+
 #
 
 <details> 
@@ -35,9 +56,13 @@ This site allows users to search for recipes by key words or ingredients and inc
 #
 
 <details>
- <summary> 🎨 Wire Frame </summary>
+ <summary> 🎨 Wire Frames </summary>
    <details> 
+    <summary> ✏️ What Are We Cooking? page</summary>
      <img src="/Other Files/WhatAreWeCookingWireframe.png">
+   </details>
+       <summary> ✏️ How to Burn that Energy? Page</summary>
+     <img src="/Other Files/Screenshot 2024-02-20 at 2.12.22 PM.png">
    </details>
 </details>
 
@@ -71,30 +96,16 @@ This site allows users to search for recipes by key words or ingredients and inc
 </details>
 
 #
-
-### Deployed Link 🔗
-<a href="#"> What Are We Cooking?</a> 
+<details> 
+<summary>Approach Taken:</summary>
+👉 I started by add in HTML and some CSS. Then created the carousel. 
+<br>
+👉 I then went back and forth through HTML, CSS, and JavaScript creating buttons and functionality. 
+<br>
+👉 Lastly, I finished off by adjusting CSS styling for responsive design. 
+</details>
 
 #
 
-## Approach Taken:
-👉 I started by add in HTML and some CSS. Then created the carousel. 
-👉 I then went back and forth through HTML, CSS, and JavaScript creating buttons and functionality. 
-👉 Lastly, I finished off by adjusting CSS styling for responsive design. 
-
-
-## Technologies used: 👩‍💻
-
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
-![VSCode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
-![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
-<!-- ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) -->
-![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
-![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
-![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 
 
