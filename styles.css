@@ -16,8 +16,8 @@ body {
   display: grid;
   gap: 10px 0; 
   grid-template-areas: 
-  ' . intro intro intro .  '
-  'searchBtns dessert modal modal . '
+  ' intro intro intro intro .  '
+  'searchBtns . modal modal . '
   'burnBtn prev carousel nxt . ';
   font-family: fantasy; 
 }
@@ -46,6 +46,7 @@ body {
   border: 3px solid var(--earthy-green);
   border-radius: 50px;
   padding: 10px;
+  width: 100%;
   color: rgb(33, 38, 104)
 }
 .bold {
@@ -109,8 +110,11 @@ dt {
 }
 #dessertResults {
   display: none;
-  grid-area: modal;
+  /* grid-area: modal; */
+
+
 }
+
 
 input[type="submit"] {
   background-color: palevioletred;
@@ -128,6 +132,9 @@ input[type='text'] {
   height: 35px;
   margin-bottom: 5px;
 }
+#results1 {
+  display: inline-block;
+}
 
 .back {
   background-color: palevioletred;
@@ -140,6 +147,7 @@ input[type='text'] {
   width: 60px;
   align-self: center;
 }
+
 #back3 {
   align-self: start;
   justify-self: center;
@@ -307,8 +315,8 @@ input[type='text'] {
 
 #burnEnergy {
   grid-area: burnBtn;
+  align-self: center;
   justify-self: center;
-  align-self: end;
   height: 30%;
   background-color: rgb(43, 210, 228);
   color: navy;
@@ -321,17 +329,270 @@ input[type='text'] {
   color: rgb(43, 210, 228);
 }
 
+
+
+
+
+
+
+
  @media only screen and (min-width: 600px) { 
+  body {
+    grid-template-columns: 1fr 1fr .25fr .25fr 1.1fr 2fr 1fr .25fr 1fr; 
+    grid-template-rows: .125fr .25fr .25fr; 
+    gap: 20px 10px; 
+    grid-template-areas: 
+    ' . intro intro intro intro intro intro intro . '
+    '. searchBtns . modal modal modal modal modal . '
+    '. burnBtn . prev carousel carousel carousel nxt . ';
+  }
+  #idliketoBTNS {
+    justify-content: center;
+  }
+  #byName {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  #byIngredient {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  #desserts { 
+    font-size: 16px;
+  }
   .modal-textbox {
       height: 375px;
-      width: 400px;
-      font-size: 23px;
+      width: 100%;
+      font-size: 20px; 
   }
+
+
+
+  .carousel-container { 
+    grid-area: carousel; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 95%;
+    height: 95%; */
+  }
+  .images {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: none;
+    border: 10px solid rgb(107, 139, 107);
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px 3px white;
+  }
+  .images:hover {
+    border: 10px solid white;
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px 3px var(--earthy-blue);
+  }
+  .images:first-of-type {
+    display: block;
+  }
+  
+  .prev, .nxt {
+    border: .5px solid white;
+    background-color: var(--seafoam-green);
+    color: var(--dark-earthy-teal-blue);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px white;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    align-self: center;
+    text-align: center;
+  }
+  .prev {
+    grid-area: prev; 
+    justify-self: end;
+    
+  }
+  
+  .nxt {
+    grid-area: nxt;
+    justify-self: start;
+  }
+
+
+
 }
-@media only screen and (min-width: 930px){
+
+
+
+
+
+
+@media only screen and (min-width: 1024px){
+    body {
+    grid-template-columns: 1fr 1fr .25fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: .125fr 400px .25fr; 
+    gap: 20px 10px; 
+    grid-template-areas: 
+    ' . intro intro intro intro intro . '
+    '. searchBtns . modal modal modal . '
+    '. burnBtn . carousel carousel carousel . ';
+  }
+  
+  #modal {
+    grid-area: modal;
+    /* background-color: white; */
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+  .modal-textbox {
+    grid-area: modal;
+    background-color: rgb(245, 245, 167);
+    border-radius: 20px;
+    border: 5px solid darkolivegreen;
+    height: 375px;
+    width: 400px;
+    font-size: 23px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    color: var(--dark-earthy-teal-blue);
+    box-shadow: 20px 5px 10px palevioletred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: fixed;
+    top: 20%;
+    left: 25%; */
+  }
+  #modal {
+    grid-area: modal;
+    /* background-color: white; */
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+  .modal-textbox {
+    grid-area: modal;
+    background-color: rgb(245, 245, 167);
+    border-radius: 20px;
+    border: 5px solid darkolivegreen;
+    height: 375px;
+    font-size: 23px;
+    text-align: center;
+    justify-content: center;
+    color: var(--dark-earthy-teal-blue);
+    box-shadow: 20px 5px 10px palevioletred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: fixed;
+    top: 20%;
+    left: 25%; */
+  }
   .modal-textbox {
       width: 550px;
-      margin: 150px auto;
+      /* margin: 150px auto; */
       padding: 10px;
   }
+
+  .carousel-container { 
+    grid-area: carousel; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 95%;
+    height: 95%; */
+  }
+  .images {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    display: none;
+    border: 10px solid rgb(107, 139, 107);
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px 3px white;
+  }
+  .prev, .nxt {
+    border: .5px solid white;
+    background-color: var(--seafoam-green);
+    color: var(--dark-earthy-teal-blue);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px white;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    align-self: center;
+    text-align: center;
+    
+  }
+  .prev {
+    grid-area: carousel; 
+    justify-self: start;
+  }
+  .nxt {
+    grid-area: carousel;
+    justify-self: end;
+  }
+  #burnEnergy {
+    font-size: 18px;
+    height: 40%;
+    border-radius: 100px;
+  }
 } 
+
+@media only screen and (min-width: 1280px){
+  #intro { 
+    font-size: 20px;
+
+  }
+  .images {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    display: none;
+    border: 10px solid rgb(107, 139, 107);
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px 3px white;
+  }
+  #byName {
+    font-size: 18px;
+  }
+  #byIngredient {
+    font-size: 18px;
+  }
+  #desserts { 
+    font-size: 18px;
+  }
+  #burnEnergy {
+    font-size: 20px;
+    height: 40%;
+  }
+}
+
+@media only screen and (min-width: 1450px){
+  .images {
+    width: 500px;
+    height: 500px;
+  }
+  #burnEnergy {
+    font-size: 20px;
+    height: 200px;
+    width: 90%;
+  }
+}
+

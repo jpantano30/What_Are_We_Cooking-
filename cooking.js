@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
 
   //carousel 
+  let carouselContainer = document.querySelector('.carousel-container')
   const next = document.querySelector('.nxt')
   const previous = document.querySelector('.prev')
   const images = document.getElementsByClassName('images')
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dessertBtn.style.display = 'none'
     keyWordDiv.style.display = 'flex'
     keyWordDiv.style.flexDirection = 'column'
-    keyWordDiv.style.gridArea = 'modal'
+    // keyWordDiv.style.gridArea = 'modal'
     burnBtn.style.display = 'none'
 
     resultsContainer.innerText = ''
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dessertBtn.style.display = 'none'
     ingredDiv.style.display = 'flex'
     ingredDiv.style.flexDirection = 'column'
-    ingredDiv.style.gridArea = 'modal'
+    // ingredDiv.style.gridArea = 'modal'
     burnBtn.style.display = 'none'
     resultsContainer2.innerText = ''
     document.querySelector('#two').innerText = ''
@@ -127,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resultItem.innerHTML = `
             <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
             <p class="recipe-title"><a href="${recipeURL}" target="_blank">${recipeTitle}</a></p>`
+            // resultItem.style.display = 'grid'
             resultsContainer.appendChild(resultItem)
           })
         } else {
@@ -199,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dessertBtn.style.display = 'none'
     dessertDiv.style.display = 'flex'
     dessertDiv.style.flexDirection = 'column'
-    dessertDiv.style.gridArea = 'modal'
+    // dessertDiv.style.gridArea = 'modal'
     burnBtn.style.display = 'none'
     resultsContainer3.innerText = '';
     document.querySelector('#three').innerText = '';
@@ -367,7 +369,9 @@ document.addEventListener('DOMContentLoaded', () => {
             burnBtn.style.display = 'none'
             backBtn3.style.display = 'flex'
             resultsModalInput.style.display = 'block'
-
+            carouselContainer.style.display = 'none'
+            next.style.display = 'none'
+            previous.style.display = 'none'
 
             const resultItem = document.createElement('div')
             resultItem.classList.add('recipe-result')
@@ -431,6 +435,11 @@ document.addEventListener('DOMContentLoaded', () => {
             searchByBtns.style.display = 'none'
             burnBtn.style.display = 'none'
             backBtn3.style.display = 'flex'
+            carouselContainer.style.display = 'none'
+            next.style.display = 'none'
+            previous.style.display = 'none'
+
+
             const resultItem = document.createElement('div')
             resultItem.classList.add('recipe-result')
             resultItem.innerHTML = `
