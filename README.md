@@ -10,7 +10,7 @@ Click the image above to be directed to What Are We Cooking!. :point_up_2:
 #
 
 # Description: 
-What Are We Cooking? Is a webpage that uses JavaScript fetch to get recipes from the Edamam Recipe Search API. 
+"What Are We Cooking?" Is a webpage that uses JavaScript fetch to get recipes from the Edamam Recipe Search API. 
  
 This site allows users to search for recipes by key words or ingredients and includes two multiple choice answer questions for finding recipes by meal type and if any dietary rectrictions are present. An additional button is included that generates random dessert recipes. 
 #
@@ -89,4 +89,10 @@ This site allows users to search for recipes by key words or ingredients and inc
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![VSCode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
+![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
+![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
+![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+
 
