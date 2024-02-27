@@ -79,7 +79,8 @@ This site allows users to search for recipes by key words or ingredients and inc
  <summary> Challenges: </summary>
  Descriptions of any unsolved problems or major hurdles that were overcome. 
  <ul>
-  <li> The formatting of the page has been a bit of a struggle for me. I would like to have the results from all buttons to display in the middle of the page but I can't seem to get them to move to the center for the 3 buttons on the left side of the screen. I also have not been able to style the results images or links to the recipes. </li>
+  <li> The formatting of the page has been a bit of a struggle for me. I would like to have the results from all buttons to display in the middle of the page.</li>
+  <li>I struggled with styling the results page but I was able to figure it out in the end. </li>
   <li> Responsive design: especially on larger screens, needs more work. I struggled with this. I started with mobile first design. I would like the information to all stay in the middle of the page when the page gets larger. </li>
   <li> One challenge I overcame invovled fetching from the API and making it work with the DOM. Everytime I got one button working, it would break my code somewhere else. </li>
   <li> Another challenge I overcame was fixing the back buttons so that the page was completely reset. The styling of the page was a little wonky at first and the button would not apear again after it had been clicked once.</li>
