@@ -41,7 +41,7 @@ This site allows users to search for recipes by key words or ingredients and inc
 </details>
 
 #
-
+  
 <details> 
 <summary>Instructions:</summary>
 👉 In order to navigate to the webpage, click on the page image above. 
@@ -82,9 +82,9 @@ This site allows users to search for recipes by key words or ingredients and inc
   <li> The formatting of the page has been a bit of a struggle for me. I would like to have the results from all buttons to display in the middle of the page but I can't seem to get them to move to the center for the 3 buttons on the left side of the screen. I also have not been able to style the results images or links to the recipes. </li>
   <li> Responsive design: especially on larger screens, needs more work. I struggled with this. I started with mobile first design. I would like the information to all stay in the middle of the page when the page gets larger. </li>
   <li> One challenge I overcame invovled fetching from the API and making it work with the DOM. Everytime I got one button working, it would break my code somewhere else. </li>
-  <li> Another challenge is that I am unable to figure out how to reset the page completely after pressing the back button. Everything seems to be reset until I click a button and the back button doesn't show up again. So escentially I am only able to get the back button to display once before it is clicked. 
+  <li> Another challenge I overcame was fixing the back buttons so that the page was completely reset. The styling of the page was a little wonky at first and the button would not apear again after it had been clicked once.</li>
   <li> The formatting of the carousel was a challenge for me. I had trouble with the placement of the previous and next buttons. </li>
-  <li>The page's CSS looks completely different on Safari compared to Chrome so currently this app is only styled for Chrome. 
+  <li>The page's CSS looks completely different on Safari compared to Chrome so currently this app is only styled for Chrome. </li>
  </ul>
 </details>
 

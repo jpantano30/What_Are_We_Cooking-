@@ -1,48 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
+  // constants and variables 
+
   const app_id = 'f674e30b'
   const app_key = '6560b677fd0aed4b118c0e7d7d2d3240'
   const endPoint = 'https://api.edamam.com/api/recipes/v2'
 
 
+  const questionOne = document.getElementById('modal-1')
+  const questionTwo = document.getElementById('modal-2')
 
   const modal = document.getElementById('modal')
   const bfastBtn = document.getElementById('bfast')
   const lunchBtn = document.getElementById('lunch')
   const dinnerBtn = document.getElementById('dinner')
 
-  const dessertBtn = document.getElementById('desserts')
-  const dessertDiv = document.getElementById('dessertResults')
-
-  const searchByKeyWordBtn = document.getElementById('byName')
-  const searchByIngredientBtn = document.getElementById('byIngredient')
-
-  const inputKeyWord = document.getElementById('inputKW')
-  const inputIngredient = document.getElementById('inputIng')
-  const keyWordDiv = document.getElementById('inputkw')
-  const ingredDiv = document.getElementById('inputI')
-  const keyWordForm = document.getElementById('kwForm')
-  const ingredientForm = document.getElementById('iForm')
-  // const burnBtn = document.getElementById('burnEnergy')
-  const resultsContainer = document.querySelector('#results1')
-  const resultsContainer2 = document.querySelector('#results2')
-  const resultsContainer3 = document.querySelector('#results3')
-  const backBtn = document.querySelector('.back')
-  const backBtn2 = document.querySelector('#back2')
-  const searchByBtns = document.getElementById('idliketoBTNS')
-  const backBtn3 = document.querySelector('#back3')
-  const backBtn4 = document.querySelector('#back4')
-  const backBtn5 = document.querySelector('#back5')
-
-
-  const questionOne = document.getElementById('modal-1')
-  const questionTwo = document.getElementById('modal-2')
-
-
-
-  let diet = ''
-  let mealType = ''
-
-  
   const dairyFBtn = document.getElementById('dairy-free')
   const glutenFBtn = document.getElementById('gluten-free')
   const ketoBtn = document.getElementById('keto')
@@ -52,14 +24,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const lowSugBtn = document.getElementById('low-sugar')
   const noneBtn = document.getElementById('none')
 
+  const searchByBtns = document.getElementById('idliketoBTNS')
+  const dessertBtn = document.getElementById('desserts')
+  const dessertDiv = document.getElementById('dessertResults')
+  const searchByKeyWordBtn = document.getElementById('byName')
+  const searchByIngredientBtn = document.getElementById('byIngredient')
+  const inputKeyWord = document.getElementById('inputKW')
+  const inputIngredient = document.getElementById('inputIng')
+  const keyWordDiv = document.getElementById('inputkw')
+  const ingredDiv = document.getElementById('inputI')
+  const keyWordForm = document.getElementById('kwForm')
+  const ingredientForm = document.getElementById('iForm')
+  
+  const resultsContainer = document.querySelector('#results1')
+  const resultsContainer2 = document.querySelector('#results2')
+  const resultsContainer3 = document.querySelector('#results3')
+
+  const backBtn = document.querySelector('.back')
+  const backBtn2 = document.querySelector('#back2')
+  const backBtn3 = document.querySelector('#back3')
+  const backBtn4 = document.querySelector('#back4')
+  const backBtn5 = document.querySelector('#back5')
 
   const resultsModalInput = document.getElementById('resultsFromModalInput')
-
   
- 
+  // const burnBtn = document.getElementById('burnEnergy')
 
-  //carousel 
-  let carouselContainer = document.querySelector('.carousel-container')
+  const carouselContainer = document.querySelector('.carousel-container')
   const next = document.querySelector('.nxt')
   const previous = document.querySelector('.prev')
   const images = document.getElementsByClassName('images')
@@ -67,6 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentImgIndex = 0
   let previousImgIndex = 0
 
+  let diet = ''
+  let mealType = ''
 
   const handleKeyWordSearch = () => {
     modal.style.display = 'none'
@@ -75,15 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
     dessertBtn.style.display = 'none'
     keyWordDiv.style.display = 'flex'
     keyWordDiv.style.flexDirection = 'column'
-    // keyWordDiv.style.gridArea = 'modal'
-    // burnBtn.style.display = 'none'
     backBtn.style.display = 'flex'
     carouselContainer.style.display = 'none'
     next.style.display = 'none'
     previous.style.display = 'none'
-
     resultsContainer.innerText = ''
     document.querySelector('#one').innerText = ''
+
+    // burnBtn.style.display = 'none'
   }
   const handleIngredientSearch = () => {
     modal.style.display = 'none'
@@ -92,15 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
     dessertBtn.style.display = 'none'
     ingredDiv.style.display = 'flex'
     ingredDiv.style.flexDirection = 'column'
-    // ingredDiv.style.gridArea = 'modal'
-    // burnBtn.style.display = 'none'
     resultsContainer2.innerText = ''
     document.querySelector('#two').innerText = ''
     backBtn2.style.display = 'flex'
     carouselContainer.style.display = 'none'
     next.style.display = 'none'
     previous.style.display = 'none'
+
+    // burnBtn.style.display = 'none'
   }
+
   searchByKeyWordBtn.addEventListener('click', handleKeyWordSearch)
   searchByIngredientBtn.addEventListener('click', handleIngredientSearch)
 
@@ -136,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
             resultItem.innerHTML = `
             <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
             <p class="recipe-title"><a href="${recipeURL}" target="_blank">${recipeTitle}</a></p>`
-            // resultItem.style.display = 'grid'
             resultsContainer.append(resultItem)
           })
         } else {
@@ -148,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       })
       .catch((err) => {
+        // If an error occurs in the promise, this code will run. 
         console.log('Error: ', err)
       })
     })
@@ -210,25 +203,22 @@ document.addEventListener('DOMContentLoaded', () => {
     dessertBtn.style.display = 'none'
     dessertDiv.style.display = 'flex'
     dessertDiv.style.flexDirection = 'column'
-    // dessertDiv.style.gridArea = 'modal'
-    // burnBtn.style.display = 'none'
     backBtn5.style.display = 'flex'
     resultsContainer3.innerText = ''
-    // document.getElementById('recipeResults3').style.gridArea = 'modal'
     document.querySelector('#three').innerText = ''
     carouselContainer.style.display = 'none'
     next.style.display = 'none'
     previous.style.display = 'none'
-
+    // burnBtn.style.display = 'none'
 
     fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&dishType=Desserts&random=true`).then(
       (data) => {
         console.log(data)
         return data.json()
       },
-      (err) => {
-        console.log("Error: ", err)
-      }
+      // (err) => {
+      //   console.log("Error: ", err)
+      // }
     ).then(
       (json) => {
         console.log("JSON DATA: ", json)
@@ -271,9 +261,9 @@ document.addEventListener('DOMContentLoaded', () => {
     searchByIngredientBtn.style.display = 'flex'
     searchByKeyWordBtn.style.display = 'flex'
     dessertBtn.style.display = 'flex'
-    // dessertBtn.style.alignContent = 'center'
-    // burnBtn.style.display = 'grid'
-    // burnBtn.style.alignContent = 'center'
+    dessertBtn.style.alignItems = 'center'
+    searchByKeyWordBtn.style.alignItems = 'center'
+    searchByIngredientBtn.style.alignItems = 'center'
     keyWordDiv.style.display = 'none'
     ingredDiv.style.display = 'none'
     dessertDiv.style.display = 'none'
@@ -285,17 +275,20 @@ document.addEventListener('DOMContentLoaded', () => {
     backBtn3.style.display = 'none'
     backBtn5.style.display = 'none'
     carouselContainer.style.display = 'grid'
+    next.style.display = 'flex'
+    previous.style.display = 'flex'
+
     
-    
+    // burnBtn.style.display = 'grid'
+    // burnBtn.style.alignContent = 'center'
+
     // Clear previous results
     resultsContainer.innerHTML = ''
     resultsContainer2.innerHTML = ''
     resultsModalInput.innerHTML = ''
-    // document.getElementById(displayResults).innerHTML = ''
     resultsContainer3.innerHTML = ''
   
-  
-    // Remove error messages
+    // Remove error messages 
     const errorMessagesOne = document.querySelectorAll('#one .error-message')
     errorMessagesOne.forEach((errorMessage) => errorMessage.remove())
   
@@ -310,8 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
   backBtn5.addEventListener('click', back)
   
   // carousel 
-
-
   next.addEventListener('click', () => {
       previousImgIndex = currentImgIndex
       currentImgIndex++
@@ -334,27 +325,24 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 
+
+//modal 
+
   const q2 = () => {
       questionOne.style.display = 'none'
       questionTwo.style.display = 'flex'
   }
-
-
-  
   bfastBtn.addEventListener('click', () => {
     mealType = 'Breakfast'
     q2()
-    
   })
   lunchBtn.addEventListener('click', () => {
     mealType = 'Lunch'
     q2()
-
   })
   dinnerBtn.addEventListener('click', () => {
     mealType = 'dinner'
     q2()
-
   })
   const fetchFunction = () => {
     backBtn4.style.display = 'grid'
@@ -370,7 +358,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ).then(
       (json) => {
         console.log("JSON DATA: ", json)
-    
 
         if(json.hits && json.hits.length > 0){
           json.hits.forEach((hit) => {
@@ -382,12 +369,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             modal.style.display = 'none'
             searchByBtns.style.display = 'none'
-            // burnBtn.style.display = 'none'
             backBtn3.style.display = 'block'
             resultsModalInput.style.display = 'block'
             carouselContainer.style.display = 'none'
             next.style.display = 'none'
             previous.style.display = 'none'
+            // burnBtn.style.display = 'none'
 
             const resultItem = document.createElement('div')
             resultItem.classList.add('recipe-result')
@@ -434,9 +421,9 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(data)
       return data.json()
     },
-    (err) => {
-      console.log("Error: ", err)
-    }
+    // (err) => {
+    //   console.log("Error: ", err)
+    // }
     ).then(
       (json) => {
         console.log("JSON DATA: ", json)
@@ -449,12 +436,11 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(recipeTitle, recipeURL, recipeImg)
             modal.style.display = 'none'
             searchByBtns.style.display = 'none'
-            // burnBtn.style.display = 'none'
             backBtn3.style.display = 'flex'
             carouselContainer.style.display = 'none'
             next.style.display = 'none'
             previous.style.display = 'none'
-
+            // burnBtn.style.display = 'none'
 
             const resultItem = document.createElement('div')
             resultItem.classList.add('recipe-result')
@@ -469,7 +455,6 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log(resultsModalInput)
           resultsModalInput.style.display = 'none'
           const errorMessage = document.createElement('h1')
-
           errorMessage.innerText = "Key Word Not Found"
           document.querySelector('#results').append(errorMessage)
         }

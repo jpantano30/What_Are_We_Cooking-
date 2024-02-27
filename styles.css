@@ -3,8 +3,6 @@
   --earthy-green: rgb(86, 143, 120);
   --earthy-teal: rgb(157, 188, 152);
   --dark-earthy-teal-blue: rgb(99, 136, 137);
-  --seafoam-green: rgb(159, 226, 191);
-  --sea-green: rgb(143, 188, 143);
   --light-sage: rgb(168, 195, 172);
   --light-peach: rgb(232, 161, 155);
   --light-green: rgb(203, 214, 203);
@@ -49,7 +47,6 @@ body::before {
   }
 }
 
-
 #intro {
   grid-area: intro;
   background-image: url('/Other\ Files/fruit-whitespace-small.jpg');
@@ -61,7 +58,7 @@ body::before {
   margin-top: -10px;
   margin-left: -7px;
   color: rgb(33, 38, 104);
-  border-bottom: 10px solid var(--light-green);
+  border-bottom: 50px solid var(--light-green);
 }
 
 .bold {
@@ -110,6 +107,7 @@ body::before {
 #byName:hover {
   box-shadow: 10px 5px 10px var(--light-orange);
   font-weight: 900;
+  cursor: pointer;
 }
 #byIngredient {
   background-color: var(--light-green);
@@ -124,6 +122,7 @@ body::before {
 #byIngredient:hover {
   box-shadow: 10px 5px 10px var(--light-orange);
   font-weight: 900;
+  cursor: pointer;
 }
 #desserts {
   grid-area: dessert;
@@ -142,6 +141,7 @@ body::before {
 #desserts:hover {
   box-shadow: 10px 5px 10px var(--light-orange);
   font-weight: 900;
+  cursor: pointer;
 }
 
 dt {
@@ -159,7 +159,6 @@ dt {
 #dessertResults {
   display: none;
 }
-
 
 input[type="submit"] {
   background-color: var(--light-green);
@@ -188,11 +187,12 @@ input[type='text'] {
   height: 40px;
   width: 60px;
   align-self: center;
+  cursor: pointer;
 }
 
 #back3 {
   align-self: start;
-  justify-self: center;
+  justify-self: start;
   display: none;
   grid-area: modal;
   z-index: 1;
@@ -262,7 +262,6 @@ input[type='text'] {
   align-content: center;
 }
 
-
 .meal:hover {
   background-color: pink;
   box-shadow: 10px 5px 5px darkolivegreen;
@@ -280,15 +279,12 @@ input[type='text'] {
   text-align: center;
 }
 
-/* I need to move back button 3 to the center and get it to show up when i click back and choose a new option */
-
-
 .carousel-container { 
   grid-area: carousel; 
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-top: 20px;
 }
 .images {
   border-radius: 10px;
@@ -339,7 +335,7 @@ input[type='text'] {
   color: white;
 }
 .nxt:hover {
-  cursor: w-resize;
+  cursor: e-resize;
   background: var(--leafy-green-dark);
   box-shadow: 3px 3px 3px 3px rgba(233, 72, 72, 0.669);
   color: white;
@@ -404,20 +400,20 @@ input[type='text'] {
 }
 
 @media only screen and (min-width: 1024px){
-    body {
-      grid-template-columns: 1fr 1fr .25fr 1fr 1fr 1fr 1fr; 
-      grid-template-rows: .125fr .25 .25fr; 
-      grid-template-areas: 
-      'intro intro intro intro intro intro intro'
-      '. searchBtns . modal modal modal . '
-      '. burnBtn . carousel carousel carousel . ';
-      background-image: url(/Other\ Files/Rhubarb-whitespace-lg.jpg);
+  body {
+    grid-template-columns: 1fr 1fr .25fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: .125fr .25 .25fr; 
+    grid-template-areas: 
+    'intro intro intro intro intro intro intro'
+    '. searchBtns . modal modal modal . '
+    '. burnBtn . carousel carousel carousel . ';
+    background-image: url(/Other\ Files/Rhubarb-whitespace-lg.jpg);
   }
   #intro > h1 {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0.488);
   }
   #intro > h2 {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0.365);
   }
   .modal-textbox {
     width: 550px;
