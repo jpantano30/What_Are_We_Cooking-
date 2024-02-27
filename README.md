@@ -14,7 +14,7 @@
 #
 
 <div align="center">
-<a href="#"><img src="#" height="400"></a>
+<a href="https://what-are-we-cooking.netlify.app/"><img src="/Other Files/ReadMePrev.png" height="400"></a>
 </div>
 
 <div align="center">
@@ -31,7 +31,7 @@ This site allows users to search for recipes by key words or ingredients and inc
 #
 
 ### Deployed Link 🔗
-<a href="#"> What Are We Cooking?</a> 
+<a href="https://what-are-we-cooking.netlify.app"> What Are We Cooking?</a> 
 
 #
 
@@ -62,7 +62,7 @@ This site allows users to search for recipes by key words or ingredients and inc
    </details>
    <details>
       <summary> ✏️ How to Burn that Energy? Page</summary>
-          <img src="/Other Files/Screenshot 2024-02-20 at 2.12.22 PM.png">
+          <img src="/Other Files/burnEnergyWireframe.png">
    </details>
 </details>
 
