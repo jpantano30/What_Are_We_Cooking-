@@ -95,12 +95,11 @@ This site allows users to search for recipes by key words or ingredients and inc
   Next steps planned: 
  <ul>
   <li> Fixes to above unsolved problems. </li>
-  <li> Fix the syling of the page and make it look nicer (changing colors and design). </li>
-  <li> Add captions on hover to the carousel. </li>
   <li> Make the "How are we going to burn that energy?" button direct the user to a new page where it will generate a random workout. I was thinking of just coding this in another file/ or same file and using a function to randomize the workouts and choose one based on the input from the user.</li>
+  <li> Fix the syling of the page and make it look nicer. </li>
+  <li> Add captions on hover to the carousel. </li>
   <li> Add CSS transitions and animations. </li>
-  <li> Another complex user interface module: tooltips.</li>
-  
+  <li> Add complex user interface module: tooltips</li>
  </ul>
 </details>
 
@@ -111,7 +110,7 @@ This site allows users to search for recipes by key words or ingredients and inc
 <br>
 👉 I then went back and forth through HTML, CSS, and JavaScript creating buttons and functionality. 
 <br>
-👉 Lastly, I finished off by adjusting CSS styling for responsive design. 
+👉 Lastly, I finished off by adjusting CSS styling for responsive design and fixed errors. 
 </details>
 
 #
