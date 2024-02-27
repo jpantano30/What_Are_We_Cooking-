@@ -40,6 +40,8 @@ This site allows users to search for recipes by key words or ingredients and inc
 <img src="/Other Files/pagePrev.png" alt="Website preview image">
 </details>
 
+#
+
 <details> 
 <summary>Instructions:</summary>
 👉 In order to navigate to the webpage, click on the page image above. 
