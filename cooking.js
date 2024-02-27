@@ -292,18 +292,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // document.getElementById(displayResults).innerHTML = ''
     resultsContainer3.innerHTML = ''
   
-    // Show the back button based on the current state
-    // if (keyWordDiv.style.display === 'flex') {
-    //   backBtn.style.display = 'block'
-    // } else if (ingredDiv.style.display === 'flex') {
-    //   backBtn2.style.display = 'block'
-    // } else if (dessertDiv.style.display === 'flex') {
-    //   backBtn5.style.display = 'flex'
-    // } else {
-    //   backBtn.style.display = 'none'
-    //   backBtn2.style.display = 'none'
-    //   backBtn5.style.display = 'none'
-    // }
   
     // Remove error messages
     const errorMessagesOne = document.querySelectorAll('#one .error-message')
@@ -393,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'none'
             searchByBtns.style.display = 'none'
             burnBtn.style.display = 'none'
-            backBtn3.style.display = 'flex'
+            backBtn3.style.display = 'block'
             resultsModalInput.style.display = 'block'
             carouselContainer.style.display = 'none'
             next.style.display = 'none'
@@ -403,18 +391,16 @@ document.addEventListener('DOMContentLoaded', () => {
             resultItem.classList.add('recipe-result')
             resultItem.innerHTML = `
             <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
-            <p class="recipe-title"><a href="${recipeURL}" target="_blank">Click here to get this recipe: 
+            <p class="recipe-title"><a href="${recipeURL}" target="_blank"> 
             ${recipeTitle}</a></p>`
-            document.querySelectorAll('#recipe-title').style.textDecoration = 'none'
-            document.getElementById('displayResults').appendChild(resultItem)
-
+            resultsModalInput.appendChild(resultItem)
           })
         } else {
           console.log(resultsModalInput)
           resultsModalInput.style.display = 'none'
           const errorMessage = document.createElement('h1')
           errorMessage.innerText = "No Recipes Found"
-          document.querySelector('#results').append(errorMessage)
+          resultsModalInput.append(errorMessage)
         }
       })
       .catch((err) => {
@@ -422,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsModalInput.style.display = 'none'
         const errorMessage = document.createElement('h1')
         errorMessage.innerText = "An error occurred while fetching recipes"
-        document.querySelector('#results').append(errorMessage)
+        resultsModalInput.append(errorMessage)
       })
   }
 
