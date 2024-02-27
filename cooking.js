@@ -370,7 +370,8 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'none'
             searchByBtns.style.display = 'none'
             backBtn3.style.display = 'block'
-            resultsModalInput.style.display = 'block'
+            resultsModalInput.style.display = 'flex'
+            // resultsModalInput.style.alignItems = 'center'
             carouselContainer.style.display = 'none'
             next.style.display = 'none'
             previous.style.display = 'none'
@@ -449,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="recipe-title"><a href="${recipeURL}" target="_blank">Click here to get this recipe: 
             ${recipeTitle}</a></p>`
             resultsModalInput.appendChild(resultItem)
-            resultsModalInput.style.display = 'block'
+            resultsModalInput.style.display = 'flex'
           })
         } else {
           console.log(resultsModalInput)

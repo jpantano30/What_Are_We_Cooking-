@@ -145,11 +145,37 @@ body::before {
 }
 
 dt {
-  color: navy;
+  color: var(--leafy-green-dark);
   text-decoration: underline;
   font-family: fantasy; 
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.555);
+  border-radius: 10px;
 }
-
+dd {
+  display: flex;
+  width: 800px;
+  overflow: scroll;
+}
+.recipe-result > img {
+  border-radius: 50px;
+  padding: 5px
+}
+.recipe-title > a {
+  text-decoration: none;
+  color: var(--leafy-green-dark);
+  background-color: var(--light-green);
+  box-shadow: 10px 5px 10px var(--light-green);
+  font-size: 26px;
+  border-radius: 10px;
+  padding: 5px;
+  word-wrap: normal;
+  height: auto;
+}
+.recipe-title > a:hover {
+  background-color: var(--light-peach);
+  box-shadow: 10px 5px 10px var(--light-orange);
+}
 #inputkw {
   display: none;
 }
@@ -192,9 +218,9 @@ input[type='text'] {
 
 #back3 {
   align-self: start;
-  justify-self: start;
+  justify-self: end;
   display: none;
-  grid-area: modal;
+  grid-area: searchBtns;
   z-index: 1;
 }
 
@@ -277,6 +303,8 @@ input[type='text'] {
   grid-area: modal;
   display: none;
   text-align: center;
+  overflow: scroll;
+  height: 800px;
 }
 
 .carousel-container { 
