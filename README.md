@@ -78,6 +78,7 @@ This site allows users to search for recipes by key words or ingredients and inc
   <li> One challenge I overcame invovled fetching from the API and making it work with the DOM. Everytime I got one button working, it would break my code somewhere else. </li>
   <li> Another challenge is that I am unable to figure out how to reset the page completely after pressing the back button. Everything seems to be reset until I click a button and the back button doesn't show up again. So escentially I am only able to get the back button to display once before it is clicked. 
   <li> The formatting of the carousel was a challenge for me. I had trouble with the placement of the previous and next buttons. </li>
+  <li>The page's CSS looks completely different on Safari compared to Chrome so currently this app is only styled for Chrome. 
  </ul>
 </details>
 
@@ -93,6 +94,7 @@ This site allows users to search for recipes by key words or ingredients and inc
   <li> Make the "How are we going to burn that energy?" button direct the user to a new page where it will generate a random workout. I was thinking of just coding this in another file/ or same file and using a function to randomize the workouts and choose one based on the input from the user.</li>
   <li> Add CSS transitions and animations. </li>
   <li> Another complex user interface module: tooltips.</li>
+  
  </ul>
 </details>
 

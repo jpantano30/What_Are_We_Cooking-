@@ -77,6 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
     keyWordDiv.style.flexDirection = 'column'
     // keyWordDiv.style.gridArea = 'modal'
     burnBtn.style.display = 'none'
+    backBtn.style.display = 'flex'
+    carouselContainer.style.display = 'none'
+    next.style.display = 'none'
+    previous.style.display = 'none'
 
     resultsContainer.innerText = ''
     document.querySelector('#one').innerText = ''
@@ -92,6 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
     burnBtn.style.display = 'none'
     resultsContainer2.innerText = ''
     document.querySelector('#two').innerText = ''
+    backBtn2.style.display = 'flex'
+    carouselContainer.style.display = 'none'
+    next.style.display = 'none'
+    previous.style.display = 'none'
   }
   searchByKeyWordBtn.addEventListener('click', handleKeyWordSearch)
   searchByIngredientBtn.addEventListener('click', handleIngredientSearch)
@@ -129,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
             <p class="recipe-title"><a href="${recipeURL}" target="_blank">${recipeTitle}</a></p>`
             // resultItem.style.display = 'grid'
-            resultsContainer.appendChild(resultItem)
+            resultsContainer.append(resultItem)
           })
         } else {
           console.log(resultsContainer)
@@ -147,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ingredientForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const valueIngred = inputIngredient.value
+    backBtn2.style.display = 'flex'
 
     fetch(`${endPoint}?type=any&q=${valueIngred}&app_id=${app_id}&app_key=${app_key}&random=true`).then(
       (data) => {
@@ -203,8 +212,14 @@ document.addEventListener('DOMContentLoaded', () => {
     dessertDiv.style.flexDirection = 'column'
     // dessertDiv.style.gridArea = 'modal'
     burnBtn.style.display = 'none'
-    resultsContainer3.innerText = '';
-    document.querySelector('#three').innerText = '';
+    backBtn5.style.display = 'flex'
+    resultsContainer3.innerText = ''
+    // document.getElementById('recipeResults3').style.gridArea = 'modal'
+    document.querySelector('#three').innerText = ''
+    carouselContainer.style.display = 'none'
+    next.style.display = 'none'
+    previous.style.display = 'none'
+
 
     fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&dishType=Desserts&random=true`).then(
       (data) => {
@@ -250,18 +265,17 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Error: ', err)
       })
   })
-
   const back = () => {
     modal.style.display = 'flex'
     searchByBtns.style.display = 'flex'
     searchByIngredientBtn.style.display = 'flex'
     searchByKeyWordBtn.style.display = 'flex'
     dessertBtn.style.display = 'flex'
-    burnBtn.style.display = 'block'
+    burnBtn.style.display = 'grid'
+    burnBtn.style.alignContent = 'center'
     keyWordDiv.style.display = 'none'
     ingredDiv.style.display = 'none'
     dessertDiv.style.display = 'none'
-    // resultsModalInput.style.display = 'none'
     resultsContainer.style.display = 'block'
     resultsContainer2.style.display = 'block'
     resultsContainer3.style.display = 'block'
@@ -269,32 +283,42 @@ document.addEventListener('DOMContentLoaded', () => {
     questionTwo.style.display = 'none'
     backBtn3.style.display = 'none'
     backBtn5.style.display = 'none'
-  
+    carouselContainer.style.display = 'grid'
+    
     // Clear previous results
     resultsContainer.innerHTML = ''
     resultsContainer2.innerHTML = ''
-    resultsModalInput.innerText = ''
+    resultsModalInput.innerHTML = ''
+    // document.getElementById(displayResults).innerHTML = ''
     resultsContainer3.innerHTML = ''
-
+  
+    // Show the back button based on the current state
+    // if (keyWordDiv.style.display === 'flex') {
+    //   backBtn.style.display = 'block'
+    // } else if (ingredDiv.style.display === 'flex') {
+    //   backBtn2.style.display = 'block'
+    // } else if (dessertDiv.style.display === 'flex') {
+    //   backBtn5.style.display = 'flex'
+    // } else {
+    //   backBtn.style.display = 'none'
+    //   backBtn2.style.display = 'none'
+    //   backBtn5.style.display = 'none'
+    // }
+  
     // Remove error messages
     const errorMessagesOne = document.querySelectorAll('#one .error-message')
     errorMessagesOne.forEach((errorMessage) => errorMessage.remove())
-
+  
     const errorMessagesTwo = document.querySelectorAll('#two .error-message')
     errorMessagesTwo.forEach((errorMessage) => errorMessage.remove())
   }
-
-  backBtn.addEventListener('click', (back))
-  backBtn2.addEventListener('click', (back))
-  backBtn3.addEventListener('click', (back))
-  backBtn4.addEventListener('click', (back))
-  backBtn5.addEventListener('click', (back))
-
-
-
-
-
-
+  
+  backBtn.addEventListener('click', back)
+  backBtn2.addEventListener('click', back)
+  backBtn3.addEventListener('click', back)
+  backBtn4.addEventListener('click', back)
+  backBtn5.addEventListener('click', back)
+  
   // carousel 
 
 
@@ -343,6 +367,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   })
   const fetchFunction = () => {
+    backBtn4.style.display = 'grid'
+    backBtn3.style.display = 'grid'
     fetch(`${endPoint}?type=public&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&health=${diet}&random=true`)
     .then((data) => {
       console.log(data)
@@ -379,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
             <p class="recipe-title"><a href="${recipeURL}" target="_blank">Click here to get this recipe: 
             ${recipeTitle}</a></p>`
-            resultsModalInput.appendChild(resultItem)
+            document.getElementById('displayResults').appendChild(resultItem)
 
           })
         } else {
@@ -412,6 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
   vegBtn.addEventListener('click', () => handleDietButtonClick('vegetarian'))
   lowSugBtn.addEventListener('click', () => handleDietButtonClick('low-sugar'))
   noneBtn.addEventListener('click', () => {
+    backBtn3.style.display = 'flex'
     diet = ''
     fetch(`${endPoint}?type=any&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&random=true`)
     .then((data) => {
