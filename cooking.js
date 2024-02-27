@@ -405,6 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${recipeImg}" alt="${recipeTitle}" class="recipe-image">
             <p class="recipe-title"><a href="${recipeURL}" target="_blank">Click here to get this recipe: 
             ${recipeTitle}</a></p>`
+            document.querySelectorAll('#recipe-title').style.textDecoration = 'none'
             document.getElementById('displayResults').appendChild(resultItem)
 
           })
