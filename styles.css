@@ -6,59 +6,86 @@
   --seafoam-green: rgb(159, 226, 191);
   --sea-green: rgb(143, 188, 143);
   --light-sage: rgb(168, 195, 172);
+  --light-peach: rgb(232, 161, 155);
+  --light-green: rgb(203, 214, 203);
+  --leafy-green-dark: rgb(59, 75, 49);
+  --light-orange: rgb(232, 161, 155);
 }
 * {
   box-sizing: border-box;
 }
 body {
-  background-color: pink;
+  background-image: url(/Other\ Files/Rhubarb-whitespace-small.jpg);
+  z-index: 1;
   color: var(--earthy-blue);
   display: grid;
   gap: 10px 0; 
   grid-template-areas: 
-  ' intro intro intro intro .  '
+  'intro intro intro intro intro'
   'searchBtns . modal modal . '
   'burnBtn prev carousel nxt . ';
   font-family: fantasy; 
+  height: 100%;
+  width: 100%;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  animation: fadeInOut 4s; 
 }
 
-#desserts {
-  grid-area: dessert;
-  align-content: start;
-  align-self: center;
-  background-color: palevioletred;
-  border: 3px solid var(--earthy-green);
-  border-radius: 50px;
-  color: white;
-  box-shadow: 10px 5px 10px rgb(234, 2, 80);
-  padding: 10px;
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
-#desserts:hover {
-  box-shadow: 10px 5px 10px rgb(13, 13, 207);
-}
 
 #intro {
   grid-area: intro;
-  background-color: rgb(168, 195, 172);
+  background-image: url('/Other\ Files/fruit-whitespace-small.jpg');
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.641));
+  background-size: cover;
   justify-content: center;
   text-align: center;
-  border: 3px solid var(--earthy-green);
-  border-radius: 50px;
-  padding: 10px;
   width: 100%;
-  color: rgb(33, 38, 104)
+  margin-top: -10px;
+  margin-left: -7px;
+  color: rgb(33, 38, 104);
+  border-bottom: 10px solid var(--light-green);
 }
+
 .bold {
   font-family: cursive;
   font-size: larger;
   color: rgb(12, 21, 142);
 }
+.bold:hover {
+  color: rgb(12, 21, 142);
+
+}
 #intro > h1 {
   text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.359);
+  font-size: 40px;
 }
 #intro > h1:hover {
-  color: var(--earthy-green);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+#intro > h2 {
+  background-color: white;
+}
+#intro > h2:hover {
+  color: rgb(1, 1, 73)
 }
 
 #idliketoBTNS {
@@ -71,26 +98,50 @@ body {
   align-items: center;
 }
 #byName {
-  background-color: palevioletred;
+  background-color: var(--light-green);
   border: 3px solid var(--earthy-green);
   border-radius: 50px;
-  color: white;
-  box-shadow: 10px 5px 10px rgb(234, 2, 80);
+  width: 110px;
+  height: 110px;
+  color: var(--leafy-green-dark);
+  box-shadow: 10px 5px 10px rgb(252, 224, 176);
   padding: 10px;
 }
 #byName:hover {
-  box-shadow: 10px 5px 10px rgb(13, 13, 207);
+  box-shadow: 10px 5px 10px var(--light-orange);
+  font-weight: 900;
 }
 #byIngredient {
-  background-color: palevioletred;
+  background-color: var(--light-green);
   border: 3px solid var(--earthy-green);
   border-radius: 50px;
-  color: white;
-  box-shadow: 10px 5px 10px rgb(234, 2, 80);
+  width: 110px;
+  height: 110px;
+  color: var(--leafy-green-dark);
+  box-shadow: 10px 5px 10px rgb(252, 224, 176);
   padding: 10px;
 }
 #byIngredient:hover {
-  box-shadow: 10px 5px 10px rgb(13, 13, 207);
+  box-shadow: 10px 5px 10px var(--light-orange);
+  font-weight: 900;
+}
+#desserts {
+  grid-area: dessert;
+  align-content: start;
+  align-self: center;
+  background-color: var(--light-green);
+  border: 3px solid var(--earthy-green);
+  border-radius: 50px;
+  width: 110px;
+  height: 110px;
+  color: var(--leafy-green-dark);
+  box-shadow: 10px 5px 10px rgb(252, 224, 176);
+  padding: 10px;
+}
+
+#desserts:hover {
+  box-shadow: 10px 5px 10px var(--light-orange);
+  font-weight: 900;
 }
 
 dt {
@@ -111,28 +162,28 @@ dt {
 
 
 input[type="submit"] {
-  background-color: palevioletred;
+  background-color: var(--light-green);
   border: 3px solid var(--earthy-green);
-  border-radius: 50px;
-  color: white;
-  box-shadow: 10px 5px 10px rgb(234, 2, 80);
+  color: var(--leafy-green-dark);
+  box-shadow: 10px 5px 10px rgb(252, 224, 176);
   padding: 10px;
+  border-radius: 50px;
 }
 
 input[type='text'] {
   background-color: white;
-  border: 2px solid green;
+  border: 2px solid var(--leafy-green-dark);
   border-radius: 10px;
   height: 35px;
   margin-bottom: 5px;
 }
 
 .back {
-  background-color: palevioletred;
+  background-color: var(--light-green);
   border: 3px solid var(--earthy-green);
+  color: var(--leafy-green-dark);
+  box-shadow: 10px 5px 10px var(--leafy-green-dark);
   border-radius: 50px;
-  color: white;
-  box-shadow: 10px 5px 10px rgb(234, 2, 80);
   padding: 10px;
   height: 40px;
   width: 60px;
@@ -155,7 +206,7 @@ input[type='text'] {
 }
 .modal-textbox {
   grid-area: modal;
-  background-color: rgb(245, 245, 167);
+  background-image: url(/Other\ Files/cuttingboard.jpg);
   border-radius: 20px;
   border: 5px solid darkolivegreen;
   height: 400px;
@@ -165,7 +216,7 @@ input[type='text'] {
   text-align: center;
   justify-content: center;
   color: var(--dark-earthy-teal-blue);
-  box-shadow: 20px 5px 10px palevioletred;
+  box-shadow: 20px 5px 10px var(--light-peach);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,7 +237,7 @@ input[type='text'] {
 .meal {
   font-family: fantasy;
   background-color: var(--light-sage);
-  box-shadow: 10px 5px 5px rgb(207, 144, 176);
+  box-shadow: 10px 5px 5px var(--leafy-green-dark);
   border-radius: 10px;
   border: 1px solid rgb(14, 21, 14);
   height: 35px;
@@ -198,10 +249,11 @@ input[type='text'] {
 }
 .diet {
   font-family: fantasy;
-  background-color: var(--light-sage);
-  box-shadow: 10px 5px 5px rgb(207, 144, 176);
+  background-color: var(--leafy-green-dark);
+  box-shadow: 10px 5px 5px var(--light-sage);
   border-radius: 10px;
   border: 1px solid rgb(14, 21, 14);
+  color: white;
   height: 35px;
   width: auto;
   font-size: 15px;
@@ -209,21 +261,7 @@ input[type='text'] {
   font-weight: 300;
   align-content: center;
 }
-/* *********
-.recipe-title > a {
-  text-decoration: none;
-  color:rgb(14, 21, 14)
-}
 
-.recipe-title{
-  text-decoration: none;
-  color: aqua;
-} */
-
-/* a:-webkit-any-link { 
-  text-decoration: none;
-  text-decoration: none;
-} */
 
 .meal:hover {
   background-color: pink;
@@ -261,23 +299,23 @@ input[type='text'] {
   box-shadow: 10px 10px 10px 3px white;
 }
 .images:hover {
-  border: 10px solid white;
+  border: 10px solid var(--light-green);
   border-radius: 30px;
   box-sizing: border-box;
-  box-shadow: 10px 10px 10px 3px var(--earthy-blue);
+  box-shadow: 10px 10px 10px 3px var(--leafy-green-dark);
 }
 .images:first-of-type {
   display: block;
 }
 
 .prev, .nxt {
-  border: .5px solid white;
-  background-color: var(--seafoam-green);
-  color: var(--dark-earthy-teal-blue);
+  border: 1px solid var(--leafy-green-dark);
+  background-color: var(--light-green);
+  color: navy;
   font-size: 20px;
   padding: 10px;
   border-radius: 50px;
-  box-shadow: 3px 3px 3px white;
+  box-shadow: 3px 3px 3px var(--leafy-green-dark);
   z-index: 1;
   height: 40px;
   width: 40px;
@@ -296,14 +334,14 @@ input[type='text'] {
 
 .prev:hover {
   cursor: w-resize;
-  background: var(--earthy-green);
-  box-shadow: 3px 3px 3px 3px peachpuff;
+  background: var(--leafy-green-dark);
+  box-shadow: 3px 3px 3px 3px rgba(233, 72, 72, 0.669);
   color: white;
 }
 .nxt:hover {
-  cursor: e-resize;
-  background: var(--earthy-green);
-  box-shadow: 3px 3px 3px 3px peachpuff;
+  cursor: w-resize;
+  background: var(--leafy-green-dark);
+  box-shadow: 3px 3px 3px 3px rgba(233, 72, 72, 0.669);
   color: white;
 }
 
@@ -330,9 +368,15 @@ input[type='text'] {
     grid-template-rows: .125fr .25fr .25fr; 
     gap: 20px 10px; 
     grid-template-areas: 
-    ' . intro intro intro intro intro intro intro . '
+    'intro intro intro intro intro intro intro intro intro'
     '. searchBtns . modal modal modal modal modal . '
     '. burnBtn . prev carousel carousel carousel nxt . ';
+    background-image: url(/Other\ Files/Rhubarb-whitespace-med.jpg);
+  }
+
+  #intro{
+    background-image: url(/Other\ Files/fruit-whitespace-med.jpg);
+    background-position: 10% 38%;
   }
   #idliketoBTNS {
     justify-content: center;
@@ -349,8 +393,8 @@ input[type='text'] {
     font-size: 16px;
   }
   .modal-textbox {
-    height: auto;
     width: 100%;
+    height: 420px;
     font-size: 20px; 
   }
   .images {
@@ -361,15 +405,21 @@ input[type='text'] {
 
 @media only screen and (min-width: 1024px){
     body {
-    grid-template-columns: 1fr 1fr .25fr 1fr 1fr 1fr 1fr; 
-    grid-template-rows: .125fr .25 .25fr; 
-    grid-template-areas: 
-    ' . intro intro intro intro intro . '
-    '. searchBtns . modal modal modal . '
-    '. burnBtn . carousel carousel carousel . ';
+      grid-template-columns: 1fr 1fr .25fr 1fr 1fr 1fr 1fr; 
+      grid-template-rows: .125fr .25 .25fr; 
+      grid-template-areas: 
+      'intro intro intro intro intro intro intro'
+      '. searchBtns . modal modal modal . '
+      '. burnBtn . carousel carousel carousel . ';
+      background-image: url(/Other\ Files/Rhubarb-whitespace-lg.jpg);
+  }
+  #intro > h1 {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  #intro > h2 {
+    background-color: rgba(255, 255, 255, 0);
   }
   .modal-textbox {
-    height: auto;
     width: 550px;
   }
 
@@ -401,17 +451,17 @@ input[type='text'] {
 } 
 
 @media only screen and (min-width: 1280px){
-
   body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
     grid-template-areas: 
-    ' . intro intro intro intro . '
+    'intro intro intro intro intro intro'
     '. searchBtns modal modal modal . '
     '. burnBtn carousel carousel carousel . ';
   }
   #intro { 
     font-size: 20px;
-
+    background-image: url(/Other\ Files/fruit-whitespace.jpg);
+    background-position: 10% 35%;
   }
   .images {
     width: 500px;
@@ -436,9 +486,13 @@ input[type='text'] {
   body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     grid-template-areas: 
-    ' . intro intro intro . '
+    'intro intro intro intro intro'
     '. searchBtns modal modal . '
     '. burnBtn carousel carousel . ';
+  }
+  #intro{
+    background-image: url(/Other\ Files/fruit-whitespace.jpg);
+    background-position: 10% 35%;
   }
   .images {
     width: 500px;

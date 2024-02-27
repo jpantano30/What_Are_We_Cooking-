@@ -14,7 +14,7 @@
 #
 
 <div align="center">
-<a href="https://what-are-we-cooking.netlify.app/"><img src="/Other Files/ReadMePrev.png" height="400"></a>
+<a href="https://what-are-we-cooking.netlify.app/"><img src="/Other Files/ModalPrev.png" height="400"></a>
 </div>
 
 <div align="center">
@@ -34,6 +34,11 @@ This site allows users to search for recipes by key words or ingredients and inc
 <a href="https://what-are-we-cooking.netlify.app"> What Are We Cooking?</a> 
 
 #
+
+<details>
+<summary>Page View </summary>
+<img src="/Other Files/pagePrev.png" alt="Website preview image">
+</details>
 
 <details> 
 <summary>Instructions:</summary>
@@ -61,7 +66,7 @@ This site allows users to search for recipes by key words or ingredients and inc
         <img src="/Other Files/WhatAreWeCookingWireframe.png">
    </details>
    <details>
-      <summary> ✏️ How to Burn that Energy? Page</summary>
+      <summary> ✏️ Future Feature: How to Burn that Energy? Page</summary>
           <img src="/Other Files/burnEnergyWireframe.png">
    </details>
 </details>
