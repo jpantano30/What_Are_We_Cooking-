@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsContainer2 = document.querySelector('#results2')
   const resultsContainer3 = document.querySelector('#results3')
 
-  const backBtn = document.querySelector('.back')
+  const backBtn1 = document.querySelector('.back')
   const backBtn2 = document.querySelector('#back2')
   const backBtn3 = document.querySelector('#back3')
   const backBtn4 = document.querySelector('#back4')
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dessertBtn.style.display = 'none'
     keyWordDiv.style.display = 'flex'
     keyWordDiv.style.flexDirection = 'column'
-    backBtn.style.display = 'flex'
+    backBtn1.style.display = 'flex'
     carouselContainer.style.display = 'none'
     next.style.display = 'none'
     previous.style.display = 'none'
@@ -256,51 +256,55 @@ document.addEventListener('DOMContentLoaded', () => {
       })
   })
   const back = () => {
-    modal.style.display = 'flex'
-    searchByBtns.style.display = 'flex'
-    searchByIngredientBtn.style.display = 'flex'
-    searchByKeyWordBtn.style.display = 'flex'
-    dessertBtn.style.display = 'flex'
-    dessertBtn.style.alignItems = 'center'
-    searchByKeyWordBtn.style.alignItems = 'center'
-    searchByIngredientBtn.style.alignItems = 'center'
-    keyWordDiv.style.display = 'none'
-    ingredDiv.style.display = 'none'
-    dessertDiv.style.display = 'none'
-    resultsContainer.style.display = 'block'
-    resultsContainer2.style.display = 'block'
-    resultsContainer3.style.display = 'block'
-    questionOne.style.display = 'flex'
-    questionTwo.style.display = 'none'
-    backBtn3.style.display = 'none'
-    backBtn5.style.display = 'none'
-    carouselContainer.style.display = 'grid'
-    next.style.display = 'flex'
-    previous.style.display = 'flex'
+    window.location.reload()
+    // modal.style.display = 'flex'
+    // searchByBtns.style.display = 'flex'
+    // searchByIngredientBtn.style.display = 'flex'
+    // searchByKeyWordBtn.style.display = 'flex'
+    // dessertBtn.style.display = 'flex'
+    // dessertBtn.style.alignItems = 'center'
+    // searchByKeyWordBtn.style.alignItems = 'center'
+    // searchByIngredientBtn.style.alignItems = 'center'
+    // keyWordDiv.style.display = 'none'
+    // ingredDiv.style.display = 'none'
+    // dessertDiv.style.display = 'none'
+    // resultsContainer.style.display = 'block'
+    // resultsContainer2.style.display = 'block'
+    // resultsContainer3.style.display = 'block'
+    // questionOne.style.display = 'flex'
+    // questionTwo.style.display = 'none'
+    // backBtn3.style.display = 'none'
+    // backBtn5.style.display = 'none'
+    // carouselContainer.style.display = 'grid'
+    // next.style.display = 'flex'
+    // previous.style.display = 'flex'
 
     
-    // burnBtn.style.display = 'grid'
-    // burnBtn.style.alignContent = 'center'
+    // // burnBtn.style.display = 'grid'
+    // // burnBtn.style.alignContent = 'center'
 
-    // Clear previous results
-    resultsContainer.innerHTML = ''
-    resultsContainer2.innerHTML = ''
-    resultsModalInput.innerHTML = ''
-    resultsContainer3.innerHTML = ''
+    // // Clear previous results
+    // resultsContainer.innerHTML = ''
+    // resultsContainer2.innerHTML = ''
+    // resultsModalInput.innerHTML = ''
+    // resultsContainer3.innerHTML = ''
   
-    // Remove error messages 
-    const errorMessagesOne = document.querySelectorAll('#one .error-message')
-    errorMessagesOne.forEach((errorMessage) => errorMessage.remove())
+    // // Remove error messages 
+    // const errorMessagesOne = document.querySelectorAll('#one .error-message')
+    // errorMessagesOne.forEach((errorMessage) => errorMessage.remove())
   
-    const errorMessagesTwo = document.querySelectorAll('#two .error-message')
-    errorMessagesTwo.forEach((errorMessage) => errorMessage.remove())
+    // const errorMessagesTwo = document.querySelectorAll('#two .error-message')
+    // errorMessagesTwo.forEach((errorMessage) => errorMessage.remove())
   }
   
-  backBtn.addEventListener('click', back)
-  backBtn2.addEventListener('click', back)
-  backBtn3.addEventListener('click', back)
-  backBtn4.addEventListener('click', back)
-  backBtn5.addEventListener('click', back)
+  document.querySelectorAll('.back').forEach((backBtn) => {
+    backBtn.addEventListener('click', back)
+  })
+  // backBtn.addEventListener('click', back)
+  // backBtn2.addEventListener('click', back)
+  // backBtn3.addEventListener('click', back)
+  // backBtn4.addEventListener('click', back)
+  // backBtn5.addEventListener('click', back)
   
   // carousel 
   next.addEventListener('click', () => {
