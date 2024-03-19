@@ -26,9 +26,9 @@ Click the image above to be directed to What Are We Cooking!. :point_up_2:
 
 
 # Description: 
-"What Are We Cooking?" Is a webpage that uses JavaScript fetch to get recipes from the Edamam Recipe Search API. 
- 
-This site allows users to search for recipes by key words or ingredients and includes two multiple choice questions for finding recipes by meal type and if any dietary restrictions are present. An additional button is included that directs the user to a list of random dessert recipe links. 
+"What Are We Cooking?" is a web application utilizing JavaScript fetch to retrieve recipes from the Edamam Recipe Search API.
+
+This platform enables users to explore recipes through keyword or ingredient searches. It includes two multiple-choice questions to filter recipes based on meal type and dietary restrictions. Additionally, users can access a curated list of random dessert recipe links through a dedicated button.
 
 #
 
