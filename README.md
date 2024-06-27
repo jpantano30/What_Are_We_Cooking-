@@ -106,6 +106,7 @@ This site allows users to search for recipes by key words or ingredients and inc
 </details>
 
 #
+
 <details> 
 <summary>Approach Taken:</summary>
 👉 I started by adding in HTML and some CSS. Then created the carousel. 

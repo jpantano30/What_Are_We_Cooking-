@@ -1,7 +1,7 @@
 :root {
   --earthy-blue: rgb(52, 56, 106);
   --earthy-green: rgb(86, 143, 120);
-  --earthy-teal: rgb(157, 188, 152);
+  --earthy-teal: rg b(157, 188, 152);
   --dark-earthy-teal-blue: rgb(99, 136, 137);
   --light-sage: rgb(168, 195, 172);
   --light-peach: rgb(232, 161, 155);
@@ -22,7 +22,7 @@ body {
   'intro intro intro intro intro'
   'searchBtns . modal modal . '
   'burnBtn prev carousel nxt . ';
-  font-family: fantasy; 
+  font-family: 'Dancing Script', 'Pacifico', 'Brush Script MT', 'Comic Sans MS', 'Comic Sans', fantasy, cursive; 
   height: 100%;
   width: 100%;
 }
@@ -63,35 +63,42 @@ body::before {
 }
 
 .bold {
-  font-family: cursive;
+  font-family: 'Dancing Script', 'Pacifico', 'Brush Script MT', 'Comic Sans MS', 'Comic Sans', fantasy, cursive;
   font-size: larger;
-  color: rgb(12, 21, 142);
+  color: rgb(219, 54, 54);
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.396);
 }
 .bold:hover {
-  color: rgb(12, 21, 142);
+  color: rgb(219, 54, 54);
 
 }
 #intro > h1 {
   text-decoration: underline;
-  background-color: rgba(255, 255, 255, 0.359);
+  background-color: rgba(255, 255, 255, 0.95);
   font-size: 40px;
 }
 #intro > h1:hover {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.49);
+  text-shadow: 3px 3px 3px rgb(255, 255, 255);
 }
 #intro > h2 {
-  background-color: white;
+  background-color: rgb(253, 253, 253);
+  font-family: 'Merriweather', serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.6;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: var(--earthy-blue);
+  text-shadow: 3px 3px 3px rgba(255, 7, 7, 0.223);
 }
-#intro > h2:hover {
-  color: rgb(1, 1, 73)
-}
+
 
 #idliketoBTNS {
   grid-area: searchBtns;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  font-family: fantasy; 
   text-align: center;
   align-items: center;
 }
@@ -104,12 +111,16 @@ body::before {
   color: var(--leafy-green-dark);
   box-shadow: 10px 5px 10px rgb(252, 224, 176);
   padding: 10px;
+  font-family: 'Dancing Script', 'Pacifico', 'Brush Script MT', 'Comic Sans MS', 'Comic Sans', fantasy, cursive;
+  font-size: 18px;
 }
 #byName:hover {
   box-shadow: 10px 5px 10px var(--light-orange);
-  font-weight: 900;
+  text-decoration: underline;
+  font-size: larger;
   cursor: pointer;
 }
+
 #byIngredient {
   background-color: var(--light-green);
   border: 3px solid var(--earthy-green);
@@ -119,10 +130,13 @@ body::before {
   color: var(--leafy-green-dark);
   box-shadow: 10px 5px 10px rgb(252, 224, 176);
   padding: 10px;
+  font-family: 'Dancing Script', 'Pacifico', 'Brush Script MT', 'Comic Sans MS', 'Comic Sans', fantasy, cursive;
+  font-size: 18px;
 }
 #byIngredient:hover {
   box-shadow: 10px 5px 10px var(--light-orange);
-  font-weight: 900;
+  text-decoration: underline;
+  font-size: larger;
   cursor: pointer;
 }
 #desserts {
@@ -137,45 +151,81 @@ body::before {
   color: var(--leafy-green-dark);
   box-shadow: 10px 5px 10px rgb(252, 224, 176);
   padding: 10px;
+  font-family: 'Dancing Script', 'Pacifico', 'Brush Script MT', 'Comic Sans MS', 'Comic Sans', fantasy, cursive;
+  font-size: 18px;
 }
 
 #desserts:hover {
   box-shadow: 10px 5px 10px var(--light-orange);
-  font-weight: 900;
+  text-decoration: underline;
+  font-size: larger;
   cursor: pointer;
 }
 
 dt {
   color: var(--leafy-green-dark);
   text-decoration: underline;
-  font-family: fantasy; 
+  font-family: 'Dancing Script', 'Pacifico', 'Brush Script MT', 'Comic Sans MS', 'Comic Sans', fantasy, cursive;
   font-size: 30px;
   background-color: rgba(255, 255, 255, 0.555);
   border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
 }
-dd {
+#recipeResults3, #recipeResults2, #recipeResults1 {
   display: flex;
-  width: 800px;
-  overflow: scroll;
+  flex-direction: column;
 }
-.recipe-result > img {
-  border-radius: 50px;
-  padding: 5px
+.resultsTitle {
+  align-self: center;
+  justify-items: center;
 }
-.recipe-title > a {
-  text-decoration: none;
-  color: var(--leafy-green-dark);
-  background-color: var(--light-green);
-  box-shadow: 10px 5px 10px var(--light-green);
-  font-size: 26px;
+
+dd {
+  display: block;
+  width: 100%; 
+  max-height: 600px; 
+  overflow-y: auto; 
+}
+.recipe-result {
+  border: 2px solid var(--earthy-green);
   border-radius: 10px;
-  padding: 5px;
-  word-wrap: normal;
-  height: auto;
+  background-color: rgba(203, 214, 203, 0.8);
+  padding: 15px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
-.recipe-title > a:hover {
-  background-color: var(--light-peach);
-  box-shadow: 10px 5px 10px var(--light-orange);
+.recipe-result img {
+  border-radius: 10px;
+  margin-right: 15px;
+  max-width: 350px;
+  max-height: 250px;
+}
+.recipe-title a {
+  text-decoration: none;
+  color: var(--earthy-blue);
+  font-weight: bold;
+  font-size: 30px;
+}
+.recipe-title a:hover {
+  color: var(--light-peach);
+}
+
+#results1, #results2, #results3, #resultsFromModalInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 3px solid var(--earthy-green);
+  border-radius: 10px;
+  background-color: rgba(203, 214, 203, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; 
+  margin: auto; 
+  max-width: 1200px;
 }
 #inputkw {
   display: none;
@@ -185,6 +235,13 @@ dd {
 }
 #dessertResults {
   display: none;
+}
+#dessertResults h1 {
+  background-color: rgba(253, 253, 253, 0.713);
+  border: 2px solid var(  --light-peach);
+  border-radius: 10px;
+  width: fit-content;
+  align-self: center;
 }
 
 input[type="submit"] {
@@ -225,6 +282,7 @@ input[type='text'] {
   z-index: 1;
 }
 
+
 #modal {
   grid-area: modal;
   height: 100%;
@@ -259,10 +317,10 @@ input[type='text'] {
 } 
 .modal-textbox > h1 {
   font-weight: 400;
-  margin-bottom: -10px;
+  text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.81);
 }
 .meal {
-  font-family: fantasy;
+  font-family: 'Dancing Script', 'Pacifico', 'Brush Script MT', 'Comic Sans MS', 'Comic Sans', fantasy, cursive;
   background-color: var(--light-sage);
   box-shadow: 10px 5px 5px var(--leafy-green-dark);
   border-radius: 10px;
@@ -271,11 +329,11 @@ input[type='text'] {
   width: auto;
   font-size: 25px;
   margin-top: 15px;
-  font-weight: 300;
+  font-weight: normal;
   align-content: center;
 }
 .diet {
-  font-family: fantasy;
+  font-family: 'Dancing Script', 'Pacifico', 'Brush Script MT', 'Comic Sans MS', 'Comic Sans', fantasy, cursive;
   background-color: var(--leafy-green-dark);
   box-shadow: 10px 5px 5px var(--light-sage);
   border-radius: 10px;
@@ -283,7 +341,7 @@ input[type='text'] {
   color: white;
   height: 35px;
   width: auto;
-  font-size: 15px;
+  font-size: 18px;
   margin-top: 15px;
   font-weight: 300;
   align-content: center;
@@ -387,7 +445,7 @@ input[type='text'] {
 }
 
 
- @media only screen and (min-width: 622px) { 
+@media only screen and (min-width: 622px) { 
   body {
     grid-template-columns: 1fr 1fr .25fr .25fr 1.1fr 2fr 1fr .25fr 1fr; 
     grid-template-rows: .125fr .25fr .25fr; 
@@ -408,14 +466,14 @@ input[type='text'] {
   }
   #byName {
     margin-bottom: 30px;
-    font-size: 16px;
+    font-size: 20px;
   }
   #byIngredient {
     margin-bottom: 30px;
-    font-size: 16px;
+    font-size: 20px;
   }
   #desserts { 
-    font-size: 16px;
+    font-size: 20px;
   }
   .modal-textbox {
     width: 100%;
@@ -437,12 +495,6 @@ input[type='text'] {
     '. searchBtns . modal modal modal . '
     '. burnBtn . carousel carousel carousel . ';
     background-image: url(/Other\ Files/Rhubarb-whitespace-lg.jpg);
-  }
-  #intro > h1 {
-    background-color: rgba(255, 255, 255, 0.488);
-  }
-  #intro > h2 {
-    background-color: rgba(255, 255, 255, 0.365);
   }
   .modal-textbox {
     width: 550px;
@@ -491,15 +543,6 @@ input[type='text'] {
   .images {
     width: 500px;
     height: 500px;
-  }
-  #byName {
-    font-size: 18px;
-  }
-  #byIngredient {
-    font-size: 18px;
-  }
-  #desserts { 
-    font-size: 18px;
   }
   #burnEnergy {
     font-size: 20px;
